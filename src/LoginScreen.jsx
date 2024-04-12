@@ -3,9 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 /*components>>>*/
 
 /*<<<components*/
-import './App.scss'
+import './LoginScreen.scss'
 
-function App() {
+function LoginScreen() {
 
   const[userData, setUserData] = useState([]);
   const user = useRef(null);
@@ -37,4 +37,4 @@ function App() {
   )
 }
 
-export default App
+export default LoginScreen;
