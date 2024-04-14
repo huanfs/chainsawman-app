@@ -51,6 +51,7 @@ const Enter = () => {
         user.current.value= theUser;
         password.current.value= thePassword;
     },[])
+
     return(
         <>
             <h1>entrar</h1>
