@@ -12,6 +12,7 @@ const Register = () => {
 
     const[userName, setUserName] = useState();
     const[userPassword, setUserPassword] = useState();
+
     const[errorWithData, setErrorWithData] = useState(false);
 
     const user = useRef(null);
@@ -48,6 +49,10 @@ const Register = () => {
     useEffect(()=>{
         localStorage.setItem("userName", userName);
         localStorage.setItem("userPassword", userPassword);
+
+            console.log(user.current.value, password.current.value);
+            console.log(localStorage.getItem("userName"))
+            console.log(localStorage.getItem("userPassword"))
     },[userName, userPassword]);
 
 

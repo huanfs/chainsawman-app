@@ -56,7 +56,7 @@ const Enter = () => {
     return(
         <>
             <h1>entrar</h1>
-            <label htmlFor="user" ref={ userLabel }>entre com um usuário válido</label>
+            <label htmlFor="user" ref={ userLabel }>usuário não encontrado</label>
             <input type="text" placeholder="nome de usuário" ref={ user} />
             <label htmlFor="password" ref={ passwordLabel }>senha incorreta</label>
             <input type="password" placeholder="sua senha" ref={ password }/>
