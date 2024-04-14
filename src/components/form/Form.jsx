@@ -8,8 +8,8 @@ import React from "react";
 /*context*/
     import { GlobalContext } from "../../Context.jsx";
 /*context*/
+
 import "./Form.scss";
-import { BiRegistered } from "react-icons/bi";
 
 const Form = () => {
 

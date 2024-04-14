@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { GlobalContext } from "../../Context.jsx";
 /*context*/
 
+import { NavLink } from "react-router-dom";
+
 import "./Enter.scss";
 
 const Enter = () => {
@@ -61,7 +63,7 @@ const Enter = () => {
             <p>esqueçeu a sua senha?</p>
             <input type="submit" value="entrar" onClick={ Enter }/>
             <p onClick={()=>{enterOrRegister.setEnter(!enterOrRegister.enter)}}>não tem uma conta? Registre-se</p>
-            <button type="button">entrar como convidado</button>{/*teste sem verificação de dados*/}
+            <button type="button"><NavLink to="teste">entrar como convidado</NavLink></button>
         </>
     )
 }

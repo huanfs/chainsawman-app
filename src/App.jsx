@@ -3,7 +3,7 @@ import React,{ useContext } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 /*components>>>*/
-  import Form from "./components/form/Form.jsx";
+  import Teste from "./teste.jsx";
   import LoginScreen from "./components/loginScreen/LoginScreen.jsx";
 /*<<<components*/
 /*context*/
@@ -18,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginScreen/>}/>
+          <Route path="teste" element={<Teste/>}/>
         </Routes>
       </BrowserRouter>
     </GlobalStorage>
