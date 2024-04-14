@@ -1,0 +1,14 @@
+@media screen and (min-width:380px){
+    main{
+        display:flex;
+        align-items:center;
+        aside{
+            height:500px;
+            width:400px;
+            background-image:url("./assets/animated-bg.gif");
+            background-size:cover;
+            border-radius:10px;
+        }
+       
+    }
+}

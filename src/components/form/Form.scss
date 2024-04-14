@@ -1,0 +1,41 @@
+form{
+    width:350px;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:1em;
+    padding:2em;
+    background-color:var(--White);
+    border-radius:10px;
+    box-shadow:0px 0px 10px var(--PaleDark);
+    position:relative;
+    left:-2em;
+    h1{
+        text-transform:capitalize;
+    }
+    label{
+        margin-bottom:-1em;
+        margin-right:auto;
+        font-size:12px;
+        display:flex;
+    }
+    input{
+        width:100%;
+        min-height:30px;
+        border-radius:5px;
+        border:none;
+        outline:0;
+        background-color:var(--LightGray);
+        text-indent:1em;
+    }
+    input:not([type="submit"]):focus{
+        border:1px solid var(--PaleDark);
+    }
+    input[type="submit"]{
+        width:80%;
+        text-transform:capitalize;
+        font-weight:600;
+    }
+}
