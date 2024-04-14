@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 /*context*/
     import { GlobalContext } from "../../Context.jsx";
@@ -32,14 +32,22 @@ const Register = () => {
        }
     }
     function Register(event){
-        if(password.current.value != confirmPassword.current.value || user.current.value.length <6){
+        if(password.current.value != confirmPassword.current.value || user.current.value.length < 6){
             setErrorWithData(true);
         }
         else{
             setErrorWithData(false);
+            setUserName(user.current.value);
+            setUserPassword(password.current.value);
         }
         event.preventDefault();
     }
+
+    /*definindo a senha e o usuário em local storage*/
+    useEffect(()=>{
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("userPassword", userPassword);
+    },[userName, userPassword]);
 
 
     return(

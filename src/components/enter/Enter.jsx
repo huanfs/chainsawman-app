@@ -20,6 +20,7 @@ const Enter = () => {
         userLabel.current.style.display="none";
         passwordLabel.current.style.display="none";
     },[])
+
     function CheckUserAnPassword(event){
         if(user.current.value.length < 6){
             userLabel.current.style.display="flex";
@@ -41,6 +42,15 @@ const Enter = () => {
         }
         event.preventDefault();
     }
+
+    /*pegando dados em localstorage caso haja*/ 
+    useEffect(()=>{
+        const theUser = localStorage.getItem("userName");
+        const thePassword = localStorage.getItem("userPassword");
+
+        user.current.value= theUser;
+        password.current.value= thePassword;
+    },[])
     return(
         <>
             <h1>entrar</h1>

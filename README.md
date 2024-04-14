@@ -7,3 +7,6 @@
 CRIAR UMA TABELA COM IFNROAMÇÕES SOBRE O QUE PODE ESTAR ERRADO A RESPE3ITO DO USUARIO OU SENHA AO CLICAR EM REGISTAR COM INFORMAÇÕES ERRADAS
 
 arrumar as paletas de cores
+
+
+eu criei dentro dos componentes enter e register uma lógicapara salvar em localstorage o usuário e senha e também para se caso hajam usuário e senha que seja preenchido automáticamente dentro do componente entrar
