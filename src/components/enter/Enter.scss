@@ -3,3 +3,14 @@ p:hover{
     text-decoration-line:underline;
     color:var(--VibrantRed);
 }
+
+@keyframes slide-out-bck-center {
+    0% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateZ(-1100px);
+        opacity: 0;
+    }
+  }

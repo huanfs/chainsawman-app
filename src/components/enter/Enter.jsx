@@ -15,6 +15,7 @@ const Enter = () => {
     const password = useRef(null);
     const userLabel = useRef(null);
     const passwordLabel = useRef(null);
+    const root = useRef(document.querySelector("#root"));
 
     useEffect(()=>{
         userLabel.current.style.display="none";
@@ -31,11 +32,11 @@ const Enter = () => {
 
     function Enter(event){
         if(user.current.value == localStorage.getItem("userName") && password.current.value == localStorage.getItem("userPassword")){
-            console.log("entrou");
             userLabel.current.style.display="none";
             user.current.style.border="1px solid var(--SolidBlack)";
             passwordLabel.current.style.display="none";
             password.current.style.border="1px solid var(--SolidBlack)";
+            root.current.style.animationName="slide-out-bck-center";
         }
         else if(user.current.value != localStorage.getItem("userName")){
             userLabel.current.style.display="flex";
