@@ -6,7 +6,7 @@ import React,{ useContext } from "react";
 /*context*/
 import { GlobalStorage } from "./Context.jsx";
 /*context*/
-import './App.scss'
+import './LoginScreen.scss'
 
 function LoginScreen() {
 
