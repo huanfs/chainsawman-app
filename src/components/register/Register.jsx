@@ -39,6 +39,7 @@ const Register = () => {
             setErrorWithData(false);
             setUserName(user.current.value);
             setUserPassword(password.current.value);
+            enterOrRegister.setEnter(!enterOrRegister.enter)
         }
         event.preventDefault();
     }
