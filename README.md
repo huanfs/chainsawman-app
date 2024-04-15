@@ -16,3 +16,11 @@ estou usando a biblioteca do react router para, dentro do componente App indicar
 
 O OBJETIVO É QUE APÓS FAZER A VALIDAÇÃO A ROTA SEJA MUDADA E SEJA RENDERIZADO O APLICATIVO:
 por exemplo. ao clicar em entrar, a rota será mudada para (ex:"/main") renderizando assim um componente de aplicativo
+
+
+eu preciso baixar as imagens dos episodios ou então gravar pequenos gifs de cada episodio para criar agora a tela do aplicativo principal pós login
+
+
+em Register devo corrigir os estados pois userName e userPassword estão como undefined: eu acho que os estados não estão sendo atualizados rapidamente pois quando eu mudo para " cost[userName, getUserName] = useState("ruan") o ruan fica salvo, mas quando eu tento salvar outra coisa sempre retorna undefined
+
+eu corrigi o erro na atualização do estado movendo a atualização de estado dentro da lógica de checar o usuário ou senha validos

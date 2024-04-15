@@ -10,22 +10,24 @@ const Register = () => {
 
     const enterOrRegister = React.useContext(GlobalContext); 
 
+    const[errorWithData, setErrorWithData] = useState(false);
+
     const[userName, setUserName] = useState();
     const[userPassword, setUserPassword] = useState();
-
-    const[errorWithData, setErrorWithData] = useState(false);
 
     const user = useRef(null);
     const password = useRef(null);
     const confirmPassword = useRef(null);
 
-    function CheckUserName(){
-        user.current.value.length < 6 ? user.current.style.border="1px solid var(--VibrantRed)" : user.current.style.border="1px solid var(--Green)";
+    function CheckUserName(event){
+        user.current.value.length < 6 ? (user.current.style.border="1px solid var(--VibrantRed)") : (user.current.style.border="1px solid var(--Green)", setUserName(event.target.value));
+        
     }
-    function CheckPassword(){
+    function CheckPassword(event){
        if(password.current.value == confirmPassword.current.value){
         password.current.style.border="1px solid var(--Green)";
         confirmPassword.current.style.border="1px solid var(--Green)";
+        setUserPassword(event.target.value)
        }
        if(password.current.value != confirmPassword.current.value){
         password.current.style.border="1px solid var(--VibrantRed)";
@@ -37,22 +39,19 @@ const Register = () => {
             setErrorWithData(true);
         }
         else{
-            setErrorWithData(false);
+            //o erro está aqui, os estados não estão sendo atualizados rapidamente
             setUserName(user.current.value);
             setUserPassword(password.current.value);
-            enterOrRegister.setEnter(!enterOrRegister.enter)
+            setErrorWithData(false);
+            enterOrRegister.setEnter(!enterOrRegister.enter);
         }
         event.preventDefault();
     }
 
     /*definindo a senha e o usuário em local storage*/
     useEffect(()=>{
-        localStorage.setItem("userName", userName);
-        localStorage.setItem("userPassword", userPassword);
-
-            console.log(user.current.value, password.current.value);
-            console.log(localStorage.getItem("userName"))
-            console.log(localStorage.getItem("userPassword"))
+        localStorage.setItem("userName", userName)
+        localStorage.setItem("userPassword", userPassword)
     },[userName, userPassword]);
 
 
