@@ -7,6 +7,9 @@
     --White: #ffffff;
     --LightGray: #F2F2F2;
     --PaleDark:#241d1dde;
+    --DesaturedYellow:rgba(230, 230, 7, 0.836);
+    --FadeBlack: #000000c5;
+    --FadeRed: #ff0000d2;
 }
 *{
     margin:0;

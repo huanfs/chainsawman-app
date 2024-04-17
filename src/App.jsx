@@ -3,7 +3,7 @@ import React,{ useContext } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 /*components>>>*/
-  import Teste from "./teste.jsx";
+  import MainApp from "./components/mainApp/MainApp.jsx";
   import LoginScreen from "./components/loginScreen/LoginScreen.jsx";
 /*<<<components*/
 /*context*/
@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginScreen/>}/>
-          <Route path="teste" element={<Teste/>}/>
+          <Route path="mainApp" element={<MainApp/>}/>
         </Routes>
       </BrowserRouter>
     </GlobalStorage>

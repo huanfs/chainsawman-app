@@ -24,3 +24,20 @@ eu preciso baixar as imagens dos episodios ou então gravar pequenos gifs de cad
 em Register devo corrigir os estados pois userName e userPassword estão como undefined: eu acho que os estados não estão sendo atualizados rapidamente pois quando eu mudo para " cost[userName, getUserName] = useState("ruan") o ruan fica salvo, mas quando eu tento salvar outra coisa sempre retorna undefined
 
 eu corrigi o erro na atualização do estado movendo a atualização de estado dentro da lógica de checar o usuário ou senha validos
+
+
+criar a página de main app!!!
+
+
+colocar dentro do componente enter o uso do hook navigate para que eu possa executar a animação d esmaecimento e so depois abrir a rota
+
+
+fazer dois botões embaixo e criar o scroll
+
+
+preciso salvar as imagens e as sinopses dentro de um array de objetos para renderizar todos eles após
+
+
+dentro do componente episode eu preciso cria-lo. decidi que o papel de parede de cada episódio será um personagem de perfil
+
+preciso criar um grid dentro de .episodePreview
