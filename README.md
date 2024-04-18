@@ -41,3 +41,6 @@ preciso salvar as imagens e as sinopses dentro de um array de objetos para rende
 dentro do componente episode eu preciso cria-lo. decidi que o papel de parede de cada episódio será um personagem de perfil
 
 preciso criar um grid dentro de .episodePreview
+
+
+definir uma imagem de fundo que pode ate ser um gif, mas que seja meio fosca para não atrabalhar as leituras
