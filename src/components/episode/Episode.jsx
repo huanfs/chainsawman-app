@@ -30,13 +30,14 @@ const Episode = () => {
         <>
             <article className="ep">
                 <div className="poster">
-                    <img src={imagem_teste} ref={poster} style={{opacity: focus ? "0.8" : "1"}}/>
+                    <img src={imagem_teste} ref={poster}/>
                     <IoPlayCircle ref={icon_play} style={{display: focus ? "flex" : "none"}}/>
                 </div>
                 <span style={{color: focus ? "var(--VibrantYellow)" : null}}>episodio 01</span>
                 <div className="controls">
-                    <FaLongArrowAltLeft/>
-                    <FaLongArrowAltRight/>
+                    <button type="button"><FaLongArrowAltLeft/>previous</button>
+                    |
+                    <button type="button">next<FaLongArrowAltRight/></button>
                 </div>
             </article>
             <Link to="/">voltar</Link>
