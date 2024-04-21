@@ -48,6 +48,9 @@ main{
             min-height:350px;
         }
         form{
+            h1{
+                color:var(--VibrantYellow);
+            }
             width:80%;
             top:-3em;
             animation-name:animateFormMobile;
