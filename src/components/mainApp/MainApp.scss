@@ -1,20 +1,39 @@
 .mainApp{
     width:100vw;
     height:100vh;
-    display:flex;
-    flex-direction:column;
-    gap:1em;
     background-color:var(--FadeRed);
-    background-image:url("../../assets/playing_pochita.gif");
-    background-size:cover;
     animation-name:enterApp;
     animation-duration: 0.5s;
     animation-iteration-count:calc(1);
-    .episodePreview{
-        display:flex;
-        gap:2em;
-        padding:0em 2em;
-        border:2px solid white;
+    .mainAppInformations{
+        padding:2em;
+        display:grid;
+        grid-template-areas: "left right";
+        grid-template-columns: 40% 60%;
+        .informations{
+            padding:2em;
+            min-width:400px;
+            max-height:550px;
+            grid-area:right;
+            display:flex;
+            flex-wrap:wrap;
+            gap:2em;
+            h2{
+                text-transform:uppercase;
+                color:var(--White);
+            }
+            .episodes{
+                width:100%;
+                height:90%;
+                display:flex;
+                gap:2em;
+                flex-wrap:wrap;
+                overflow-y:scroll;
+            }
+            .episodes::-webkit-scrollbar{
+                width:0;
+            }
+        }
     }
 }
 @keyframes enterApp{

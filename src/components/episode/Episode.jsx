@@ -1,47 +1,21 @@
-import React,{ useState, useRef, useEffect } from "react";
+import React,{ useEffect, useRef } from "react";
 
-import { Link } from "react-router-dom";
-
-import { IoPlayCircle } from "react-icons/io5";
-import { FaLongArrowAltLeft } from "react-icons/fa";
-import { FaLongArrowAltRight } from "react-icons/fa";
-
-import imagem_teste from "../../assets/thumb_ep03.jpg";
+import { GlobalContext } from "../../Context.jsx";
 
 import "./Episode.scss";
 
-const Episode = () => {
+const Episode = ({ item }) => {
 
-    const[focus, setFocus] = useState(false);
+    const episode = React.useContext(GlobalContext);
 
-    const poster = useRef(null);
-    const icon_play = useRef(null);
-
-    function Focusable(){
-        setFocus(!focus);
+    function GetEpisode(event){
+        episode.setEpisode(event.target.nextElementSibling.innerHTML)
     }
-
-    useEffect(()=>{
-        poster.current.addEventListener("mouseover", Focusable);
-        poster.current.addEventListener("mouseout", Focusable);
-    },[focus])
-
     return(
-        <>
-            <article className="ep">
-                <div className="poster">
-                    <img src={imagem_teste} ref={poster}/>
-                    <IoPlayCircle ref={icon_play} style={{display: focus ? "flex" : "none"}}/>
-                </div>
-                <span style={{color: focus ? "var(--VibrantYellow)" : null}}>episodio 01</span>
-                <div className="controls">
-                    <button type="button"><FaLongArrowAltLeft/>previous</button>
-                    |
-                    <button type="button">next<FaLongArrowAltRight/></button>
-                </div>
-            </article>
-            <Link to="/">voltar</Link>
-        </>
+        <div className="episode" onClick={GetEpisode}>
+            <img src={item.cover}/>
+            <span>{item.episode}</span>
+        </div>
     )
 }
 
