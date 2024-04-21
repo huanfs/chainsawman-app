@@ -12,3 +12,18 @@
         }
     }
 }
+
+@media screen and (max-width:379px){
+    form{
+        label{
+            margin-bottom:0;
+        }
+    }
+    .error-hint{
+        list-style-type:square;
+        width:80%;
+        li{
+            font-size:12px;
+        }
+    }
+}

@@ -1,31 +1,55 @@
+main{
+    display:flex;
+    align-items:center;
+    aside{
+        position:relative;
+        background-image:url("../../assets/animated-bg.gif");
+        background-size:cover;
+        border-radius:10px;
+        animation-name:animateAsideMobile;
+        animation-iteration-count:1;
+        animation-duration:1s;
+        animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    form{
+        position:relative;
+        animation-iteration-count:1;
+        animation-duration:1s;
+        animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+}
+
 @media screen and (min-width:380px){
-    @media screen and (min-width:380px){
         main{
-            display:flex;
-            align-items:center;
             aside{
-                position:relative;
                 right:0;
                 height:500px;
                 width:400px;
-                background-image:url("../../assets/animated-bg.gif");
-                background-size:cover;
-                border-radius:10px;
-                animation-name:animateAside;
-                animation-iteration-count:1;
-                animation-duration:1s;
-                animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
-    
+                animation-name:animateAside;   
             }
             form{
-                position:relative;
                 right:2em;
-                animation-name:animateForm;
-                animation-iteration-count:1;
-                animation-duration:1s;
-                animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+                animation-name:animateForm; 
             }
         }
+}
+
+@media screen and (max-width:379px){
+    main{
+        width:100vw;
+        height:100vh;
+        flex-direction:column;
+        padding:1em 0;
+        aside{
+            height:70%;
+            width:90%;
+            min-width:330px;
+            min-height:350px;
+        }
+        form{
+            width:80%;
+            top:-3em;
+            animation-name:animateFormMobile;
+        }
     }
-    
 }

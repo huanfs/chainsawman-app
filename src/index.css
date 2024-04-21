@@ -12,6 +12,7 @@
     --FadeRed: #ff0000d2;
 }
 /*formulary animations*/
+    /*up to 380px*/
 @keyframes animateForm{
     from{
         opacity:0;
@@ -33,6 +34,29 @@
         right:0;
     }
 }
+
+    /*less to 379px*/
+    @keyframes animateFormMobile{
+        from{
+            opacity:0;
+            top:15em;
+        }
+        to{
+            opacity:1;
+            top:-3em;
+        }
+    }
+    
+    @keyframes animateAsideMobile{
+        from{
+            opacity:0;
+            bottom:15em;
+        }
+        to{
+            opacity:1;
+            bottom:0;
+        }
+    }
 /*formulary animations*/
 
 /*submit form animation*/
