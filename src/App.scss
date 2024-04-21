@@ -25,25 +25,8 @@
             animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
         }
     }
-    @keyframes animateForm{
-        from{
-            opacity:0;
-            right:-15em;
-        }
-        to{
-            opacity:1;
-            right:2em;
-        }
-    }
-
-    @keyframes animateAside{
-        from{
-            opacity:0;
-            right:15em;
-        }
-        to{
-            opacity:1;
-            right:0;
-        }
-    }
 }
+
+
+
+

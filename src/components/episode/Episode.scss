@@ -1,28 +1,30 @@
-.episode{
-    max-width:250px;
-    max-height:150px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    overflow:hidden;
-    img{
-        width:100%;
-        height:100%;
-        transition:0.1s;
+@media screen and (min-width:380px){
+    .episode{
+        max-width:250px;
+        max-height:150px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        overflow:hidden;
+        img{
+            width:100%;
+            height:100%;
+            transition:0.1s;
+        }
+        img:hover{
+            filter:brightness(3);
+        }
+        span{
+            width:100%;
+            position:relative;
+            top:-1.2em;
+            text-align:center;
+            font-weight:500;
+            color:var(--White);
+            background-color:var(--FadeBlack);
+        }
     }
-    img:hover{
-        filter:brightness(3);
+    .episode:hover{
+        cursor:pointer;
     }
-    span{
-        width:100%;
-        position:relative;
-        top:-1.2em;
-        text-align:center;
-        font-weight:500;
-        color:var(--White);
-        background-color:var(--FadeBlack);
-    }
-}
-.episode:hover{
-    cursor:pointer;
 }

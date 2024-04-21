@@ -1,12 +1,14 @@
-p:hover{
-    cursor:pointer;
-    text-decoration-line:underline;
-    color:var(--VibrantRed);
-}
-.error-hint{
-    list-style-type:square;
-    width:90%;
-    li{
-        font-size:12px;
+@media screen and (min-width:380px){
+    p:hover{
+        cursor:pointer;
+        text-decoration-line:underline;
+        color:var(--VibrantRed);
+    }
+    .error-hint{
+        list-style-type:square;
+        width:90%;
+        li{
+            font-size:12px;
+        }
     }
 }

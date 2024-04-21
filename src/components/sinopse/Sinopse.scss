@@ -1,15 +1,17 @@
-.sinopse{
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    gap:1em;
-    align-items:flex-start;
-    h2{
-        text-transform:uppercase;
-        color:var(--White);
-    }
-    h3{
-        color:var(--White);
+@media screen and (min-width:380px){
+    .sinopse{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        gap:1em;
+        align-items:flex-start;
+        h2{
+            text-transform:uppercase;
+            color:var(--White);
+        }
+        h3{
+            color:var(--White);
+        }
     }
 }

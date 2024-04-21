@@ -11,6 +11,79 @@
     --FadeBlack: #000000c5;
     --FadeRed: #ff0000d2;
 }
+/*formulary animations*/
+@keyframes animateForm{
+    from{
+        opacity:0;
+        right:-15em;
+    }
+    to{
+        opacity:1;
+        right:2em;
+    }
+}
+
+@keyframes animateAside{
+    from{
+        opacity:0;
+        right:15em;
+    }
+    to{
+        opacity:1;
+        right:0;
+    }
+}
+/*formulary animations*/
+
+/*submit form animation*/
+@keyframes slide-out-bck-center {
+    0% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateZ(-1100px);
+        opacity: 0;
+    }
+  }
+/*submit form animation*/
+
+/*animation of form an aside (on loading for first time)*/
+@keyframes animateForm{
+    from{
+        opacity:0;
+        right:-15em;
+    }
+    to{
+        opacity:1;
+        right:2em;
+    }
+}
+
+@keyframes animateAside{
+    from{
+        opacity:0;
+        right:15em;
+    }
+    to{
+        opacity:1;
+        right:0;
+    }
+}
+/*animation of form an aside (on loading for first time)*/
+
+/*animation while opening the main app for first time*/
+@keyframes enterApp{
+    from{
+        opacity:0;
+        transform:scale(0,0);
+    }
+    to{
+        opacity:1;
+        transform:scale(1,1);
+    }
+}
+/*animation while opening the main app for first time*/
 *{
     margin:0;
     padding:0;
