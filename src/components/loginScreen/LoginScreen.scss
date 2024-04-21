@@ -37,7 +37,6 @@ main{
 @media screen and (max-width:379px){
     main{
         width:100vw;
-        height:100vh;
         flex-direction:column;
         padding:1em 0;
         background-image:linear-gradient(to bottom, var(--VibrantRed), var(--VibrantYellow));
@@ -52,6 +51,7 @@ main{
                 color:var(--VibrantYellow);
             }
             width:80%;
+            height:50%;
             top:-3em;
             animation-name:animateFormMobile;
         }
