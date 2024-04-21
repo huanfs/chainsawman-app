@@ -40,6 +40,7 @@ main{
         height:100vh;
         flex-direction:column;
         padding:1em 0;
+        background-image:linear-gradient(to bottom, var(--VibrantRed), var(--VibrantYellow));
         aside{
             height:70%;
             width:90%;
