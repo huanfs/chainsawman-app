@@ -10,8 +10,10 @@ export const GlobalStorage = ({ children }) => {
 
     const[episode, setEpisode] = useState("episodio 01");
 
+    const[screenSize, setScreenSize] = useState(null);
+
     return(
-        <GlobalContext.Provider value={{enter, setEnter, appSection, setAppSection, episode, setEpisode}}>
+        <GlobalContext.Provider value={{enter, setEnter, appSection, setAppSection, episode, setEpisode, screenSize, setScreenSize}}>
             { children }
         </GlobalContext.Provider>
     )
