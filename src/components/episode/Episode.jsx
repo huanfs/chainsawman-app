@@ -10,6 +10,7 @@ const Episode = ({ item }) => {
 
     function GetEpisode(event){
         episode.setEpisode(event.target.nextElementSibling.innerHTML)
+        episode.setCover(event.target.src);
     }
     return(
         <div className="episode" onClick={GetEpisode}>
