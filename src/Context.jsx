@@ -1,6 +1,8 @@
 import React,{ useState, useEffect } from "react";
 
-import { allThumbs } from "../public/episodesInformations.jsx";
+import { allThumbs } from "../public/episodesInformations.jsx"; //<-- episode covers
+
+import default_thumb from "../public/thumb/default_thumb.jpg"; //<-- default cover
 
 export const GlobalContext = React.createContext();
 
@@ -12,7 +14,7 @@ export const GlobalStorage = ({ children }) => {
 
     const[episode, setEpisode] = useState("episodio 01");
 
-    const[cover, setCover] = useState(null);
+    const[cover, setCover] = useState(default_thumb);
 
     const[screenSize, setScreenSize] = useState(null);
 
@@ -40,3 +42,20 @@ export const GlobalStorage = ({ children }) => {
         </GlobalContext.Provider>
     )
 }
+
+
+//this is an GlobalContext serving data acessible for all components in the app.
+
+//here we import an array [allThumbs] from public paste, this array contains all 12 episode cover images.
+
+//default_thumb is an initial thumb.
+
+//we have some states: [
+//  enter: define if user tryng to enter or register;
+//  appSection: define the current section in app like: sinopse, episodes, season, etc...;
+//  episode: storages the current episode label like: episode 01 or episode 02, etc...;
+//  cover: storages the current cover for current selected episode;
+//  screenSize: storages screen current width;
+//].
+
+//we have an useEffect responsible for change the state COVER if state EPISODE changes.

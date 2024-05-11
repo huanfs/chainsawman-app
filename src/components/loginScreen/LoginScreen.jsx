@@ -5,10 +5,10 @@ import React,{ useContext } from "react";
 /*<<<components*/
 
 /*context*/
-import { GlobalStorage } from "../../Context.jsx";
+  import { GlobalStorage } from "../../Context.jsx";
 /*context*/
 
-import './LoginScreen.scss'
+import './LoginScreen.scss'; //<--styles
 
 function LoginScreen() {
 
@@ -23,3 +23,9 @@ function LoginScreen() {
 }
 
 export default LoginScreen;
+
+//import Form.jsx.
+
+//import GlobalStorage encapsulating MAIN tag.
+
+//inside MAIN render an aside (with an animate background) and Form.jsx.

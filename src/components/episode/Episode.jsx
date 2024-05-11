@@ -1,4 +1,4 @@
-import React,{ useEffect, useRef } from "react";
+import React from "react";
 
 import { GlobalContext } from "../../Context.jsx";
 
@@ -21,3 +21,10 @@ const Episode = ({ item }) => {
 }
 
 export default Episode;
+
+
+//this component consumes GlobalContext and access both episode state and cover state from him.
+
+//we have an function called GetEpisode(event) receiving as argument the event, this function:
+//sets episode value to event next element innerHTML.
+//sets the cover value to a same SRC of event.target.

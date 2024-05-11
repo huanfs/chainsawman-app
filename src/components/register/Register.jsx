@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
     import { GlobalContext } from "../../Context.jsx";
 /*context*/
 
-import "./Register.scss";
+import "./Register.scss"; //<--styles
 
 const Register = () => {
 
@@ -34,6 +34,7 @@ const Register = () => {
         confirmPassword.current.style.border="1px solid var(--VibrantRed)";
        }
     }
+    //mandar essa função Register para dentro de alguma das outras funções anteriores
     function Register(event){
         if(password.current.value != confirmPassword.current.value || user.current.value.length < 6){
             setErrorWithData(true);
@@ -80,3 +81,33 @@ const Register = () => {
 }
 
 export default Register;
+
+
+//this component is responsible for save values for user name and password.
+
+//we import GlobalContext to get access of enter value inside Context.
+
+//here we have some states to manage data like: [
+//  errorWithData ->  get an error if thei exists (more explanations next),
+//  userName ->  saves user name you entered,
+//  userPassword -> saver password you enetered,
+//].
+
+//we use ref hook to get all three input tag responsible respectively for: 
+//user name, user password, confirm password.
+
+//CheckUserName(event) function receive event as argument and:
+//checks if user ref value length is less than 6, if true sets user color to (--VibrantRed), 
+//else, set's it to (--Green) and save they value in userName state.
+
+//CheckPassword(event) receive event as argument and checks if the value passed to 
+//password is the same value passed to confirmPassword, if true set's both password 
+//and confirmPassword border color to (--Green) and save this value in userPassword state.
+//else sets both password and confirmPassword border color to (--VibrantRed).
+
+//Register(event) checks the values passed in user, password and confirm password,
+//if user value length less than 6 characters or password value differs from checkPassword value, 
+//sets inversal value in state errorWithData, finally uses an preventDefault from event to block page reload.
+
+//we use an useEffect hook to save in localStorage both user name and password (if everything's ok with them)
+//watching userName and userPassword values changes.

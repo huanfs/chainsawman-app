@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 
 /*context*/
-import { GlobalContext } from "../../Context.jsx";
+    import { GlobalContext } from "../../Context.jsx";
 /*context*/
 
 import { NavLink } from "react-router-dom";
 
-import "./Enter.scss";
+import "./Enter.scss"; //<--styles
 
 const Enter = () => {
 
-    const enterOrRegister = React.useContext(GlobalContext)
+    const enterOrRegister = React.useContext(GlobalContext); //<--consuming context
 
     const[userData, setUserData] = useState([]);
     const user = useRef(null);
@@ -69,3 +69,29 @@ const Enter = () => {
 }
 
 export default Enter;
+
+
+//this component consumes context for access enter state from GlobalContext.
+
+//we have some refs for some HTML tags here like: [
+//  user -> first input tag (to enter with user name);
+//  password -> the second input tag (to enter with user password);
+// userLabel -> the label for user input;
+// passwordLabel -> the label for password input;
+// root -. label for #root div;
+//]
+
+//we use an useEffect to sets userLabel and passwordLabel to display:none;
+
+//we use another useEffect to get in localStorage both user and password and
+//sets refs for user and password with the respectively values from localStorage.
+
+//we have an function called Enter(event), receiving as argument the event, this function:
+//checks the values in user and password refs matches with values userName and userPassword in localStorage
+//if match turn labels userLabel and passwordLabel to display:none and they colors to (--SolidBlack)
+//starts an fade animation;
+//now, if only user does not match with userName value in localStorage sets the user borderColor to (--VibrantRed)
+//and sets userLabel to display:flex and color to (--VibrantRed);
+//finaly, in the last case, if only password value does not matches with userPassword value in localStorage
+//sets password to borderColor:var(--VibrantRed) and passwordLabel to display:flex and (--VibrantRed) color;
+//the last comand is an preventDefault to block reaload.
