@@ -1,14 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom"; // IMPORTAÇÃO DO HOOK NAVIGATE
+
 /*context*/
     import { GlobalContext } from "../../Context.jsx";
 /*context*/
 
-import { NavLink } from "react-router-dom";
-
 import "./Enter.scss"; //<--styles
 
 const Enter = () => {
+
+    const Navigate = useNavigate(); //PASSANDO O HOOK PARA DENTRO DE UMA VARIÁVEL
 
     const enterOptions = React.useContext(GlobalContext); //<--consuming context
 
@@ -70,6 +72,7 @@ const Enter = () => {
             password.current.style.border="1px solid var(--SolidBlack)";
             root.current.style.animationName="slide-out-bck-center";
             AutenticarUsuario();//chamada da função autenticar
+            Navigate("/mainApp"); //MUDANDO A ROTA APÓS TODO O PROCESSAMENTO
         }
         else if(user.current.value != localStorage.getItem("userName")){
             userLabel.current.style.display="flex";
@@ -129,7 +132,7 @@ const Enter = () => {
             <p>esqueçeu a sua senha?</p>
             <input type="submit" value="entrar" onClick={ Enter }/>
             <p onClick={()=>{enterOptions.setEnter(!enterOptions.enter)}}>não tem uma conta? Registre-se</p>
-            <button type="button"><NavLink to="mainApp">entrar como convidado</NavLink></button>
+            <button type="button" onClick={()=>Navigate("/mainApp")}>entrar como convidado</button>
         </>
     )
 }

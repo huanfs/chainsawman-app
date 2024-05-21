@@ -9,6 +9,7 @@ export const GlobalContext = React.createContext();
 export const GlobalStorage = ({ children }) => {
 
     const[userName, setUserName] = useState(null);
+    
     const[userPassword, setUserPassword] = useState(null);
 
     const[enter, setEnter] = useState(false);
