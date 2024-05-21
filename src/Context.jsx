@@ -14,7 +14,7 @@ export const GlobalStorage = ({ children }) => {
 
     const[enter, setEnter] = useState(false);
 
-    const[appSection, setAppSection] = useState("sinopse");
+    const[appSection, setAppSection] = useState("episodios");
 
     const[episode, setEpisode] = useState("episodio 01");
 
