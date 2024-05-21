@@ -10,27 +10,57 @@ import "./Enter.scss"; //<--styles
 
 const Enter = () => {
 
-    const enterOrRegister = React.useContext(GlobalContext); //<--consuming context
+    const enterOptions = React.useContext(GlobalContext); //<--consuming context
 
-    const[userData, setUserData] = useState([]);
-    const user = useRef(null);
-    const password = useRef(null);
-    const userLabel = useRef(null);
-    const passwordLabel = useRef(null);
-    const root = useRef(document.querySelector("#root"));
+    /*talvezs eu precise criar uma variável de autenticação, pois o servidor recebe os dados de usuario
+    e senha e faz uma verificação no banco de dados por estes valores, caso os encontre está retornando
+    o objeto de resposta completo, talvez se eu passar a variavel de autenticação como false e torna-la true
+    dependo do resultado da busca e so a partir dela definir se o usuário deverá ter acesso ao aplicativo
+    seja uma boa ideia*/
 
-    useEffect(()=>{
-        userLabel.current.style.display="none";
-        passwordLabel.current.style.display="none";
-    },[])
+    /*referencias*/
+        const user = useRef(null);
+        const password = useRef(null);
+        const userLabel = useRef(null);
+        const passwordLabel = useRef(null);
+        const root = useRef(document.querySelector("#root"));
+    /*referencias*/
 
-    useEffect(()=>{
-        const theUser = localStorage.getItem("userName");
-        const thePassword = localStorage.getItem("userPassword");
+    /*define as labels para display:none*/
+        useEffect(()=>{
+            userLabel.current.style.display="none";
+            passwordLabel.current.style.display="none";
+        },[])
+    /*define as labels para display:none*/
 
-        user.current.value= theUser;
-        password.current.value= thePassword;
-    },[])
+    /*caso enterOptions.userName e userPsssword tenham valores definidos (após o registro)
+    define em localStorage estes valores*/
+        useEffect(()=>{
+            enterOptions.userName != null ? localStorage.setItem("userName", enterOptions.userName) : null
+            enterOptions.userPassword != null ? localStorage.setItem("userPassword", enterOptions.userPassword): null
+        },[enterOptions.userName, enterOptions.userPassword])
+    /*caso enterOptions.userName e userPsssword tenham valores definidos (após o registro)
+    define em localStorage estes valores*/
+
+    /*caso os valores referentes ao usuario e senha já existam (usuario previamente registrado)
+    define os campos de usuario e senha no componente entrar com o usuario e senha previamente registrados */ 
+        useEffect(()=>{
+            if(localStorage.getItem("userName")){
+                user.current.value =  localStorage.getItem("userName")
+            }
+            if(localStorage.getItem("userPassword")){
+                password.current.value =  localStorage.getItem("userPassword")
+            }
+        })
+    /*caso os valores referentes ao usuario e senha já existam (usuario previamente registrado)
+    define os campos de usuario e senha no componente entrar com o usuario e senha previamente registrados */
+
+    /*um console.log para verificar se os valores estão sendo salvos dentro de localStorage*/
+        useEffect(()=>{
+            console.log(localStorage)
+        },[enterOptions.userName, enterOptions.userPassword]);
+    /*um console.log para verificar se os valores estão sendo salvos dentro de localStorage*/
+
 
     function Enter(event){
         if(user.current.value == localStorage.getItem("userName") && password.current.value == localStorage.getItem("userPassword")){
@@ -39,6 +69,7 @@ const Enter = () => {
             passwordLabel.current.style.display="none";
             password.current.style.border="1px solid var(--SolidBlack)";
             root.current.style.animationName="slide-out-bck-center";
+            AutenticarUsuario();//chamada da função autenticar
         }
         else if(user.current.value != localStorage.getItem("userName")){
             userLabel.current.style.display="flex";
@@ -53,6 +84,41 @@ const Enter = () => {
         event.preventDefault();
     }
 
+
+
+
+
+
+
+
+
+
+
+    async function AutenticarUsuario(){
+        const dados = {
+            usuario: user.current.value,
+            senha: password.current.value,
+        }
+        const Autenticar = await fetch("http://localhost:3000/autenticar",{
+            method: 'POST',
+            body: JSON.stringify(dados),
+            headers:{
+                'Content-Type':'application/json',
+            }
+        });
+        const resultado = await Autenticar.json();
+        console.log(resultado)
+    }
+
+
+
+
+
+
+
+
+
+
     return(
         <>
             <h1>entrar</h1>
@@ -62,7 +128,7 @@ const Enter = () => {
             <input type="password" placeholder="sua senha" ref={ password }/>
             <p>esqueçeu a sua senha?</p>
             <input type="submit" value="entrar" onClick={ Enter }/>
-            <p onClick={()=>{enterOrRegister.setEnter(!enterOrRegister.enter)}}>não tem uma conta? Registre-se</p>
+            <p onClick={()=>{enterOptions.setEnter(!enterOptions.enter)}}>não tem uma conta? Registre-se</p>
             <button type="button"><NavLink to="mainApp">entrar como convidado</NavLink></button>
         </>
     )

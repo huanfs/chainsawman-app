@@ -8,6 +8,9 @@ export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
 
+    const[userName, setUserName] = useState(null);
+    const[userPassword, setUserPassword] = useState(null);
+
     const[enter, setEnter] = useState(false);
 
     const[appSection, setAppSection] = useState("sinopse");
@@ -36,7 +39,7 @@ export const GlobalStorage = ({ children }) => {
     },[episode])
     return(
         <GlobalContext.Provider value={
-            {enter, setEnter, appSection, setAppSection, episode, setEpisode, screenSize, setScreenSize, cover,setCover}
+            {enter, setEnter, appSection, setAppSection, episode, setEpisode, screenSize, setScreenSize, cover,setCover, userName, setUserName, userPassword, setUserPassword}
             }>
             { children }
         </GlobalContext.Provider>

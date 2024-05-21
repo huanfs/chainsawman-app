@@ -8,7 +8,7 @@ import "./Register.scss"; //<--styles
 
 const Register = () => {
 
-    const enterOrRegister = React.useContext(GlobalContext); 
+    const registerOptions = React.useContext(GlobalContext); 
 
     const[errorWithData, setErrorWithData] = useState(false);
 
@@ -39,20 +39,49 @@ const Register = () => {
         if(password.current.value != confirmPassword.current.value || user.current.value.length < 6){
             setErrorWithData(true);
         }
+        
         else{
-            //o erro está aqui, os estados não estão sendo atualizados rapidamente
+            //este bloco de código comentado funciona***
+            // setUserName(user.current.value);
+            // setUserPassword(password.current.value);
+            // setErrorWithData(false);
+            // registerOptions.setEnter(!registerOptions.enter);
+
             setUserName(user.current.value);
             setUserPassword(password.current.value);
             setErrorWithData(false);
-            enterOrRegister.setEnter(!enterOrRegister.enter);
+            registerOptions.setEnter(!registerOptions.enter);
+            /*função de adição*/
+            async function CreateNewUser() {
+                const User = {
+                    userName: registerOptions.userName,
+                    userPassword: registerOptions.userPassword,
+                };
+                try {
+                    const CreateUser = await fetch("http://localhost:3000/adicionar", {
+                        method: 'POST',
+                        body: JSON.stringify(User),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    console.log("Usuário adicionado");
+                } catch (err) {
+                    console.log("Não foi possível enviar os dados ao banco de dados: " + err);
+                }
+            }
+            
+            CreateNewUser();
         }
         event.preventDefault();
     }
 
     /*definindo a senha e o usuário em local storage*/
     useEffect(()=>{
-        localStorage.setItem("userName", userName)
-        localStorage.setItem("userPassword", userPassword)
+        // localStorage.setItem("userName", userName)
+        // localStorage.setItem("userPassword", userPassword)
+        registerOptions.setUserName(userName)
+        registerOptions.setUserPassword(userPassword);
     },[userName, userPassword]);
 
 
@@ -65,7 +94,7 @@ const Register = () => {
             <input type="password" ref={ password }/>
             <label htmlFor="confirmPassword">confirme sua senha</label>
             <input type="password" ref={ confirmPassword } onChange={ CheckPassword }/>
-            <p onClick={()=>{enterOrRegister.setEnter(!enterOrRegister.enter)}}>já tem uma conta? Entrar</p>
+            <p onClick={()=>{registerOptions.setEnter(!registerOptions.enter)}}>já tem uma conta? Entrar</p>
             <input type="submit" value="registar" onClick={Register}/>
             {
                 errorWithData && (

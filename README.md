@@ -73,3 +73,12 @@ por exemplo. ao clicar em entrar, a rota será mudada para (ex:"/main") renderiz
 
 
 - definir uma imagem de fundo que pode ate ser um gif, mas que seja meio fosca para não atrabalhar as leituras
+
+- no componente **Enter.js** eu tenho uma função _Adicionar_ que tem como intuito adicionar um usuário e uma senha previamente salvos nos estados **user** e **password**, a função faz o seguinte:
+1. na linha 65 executa um bloco *try*.
+2. na linha 66 dá um `console.log('realizando o fetch...)`.
+3. na linha 67 temos uma variavel que vai receber dados da requisição **fetch**
+4. dentro do fetch, passamos a ulr e um objeto com ifnromações da requisição. na linha 68 passamos o **method** que é **post** (enviar dados)
+5. na linha 69 passamos um objeto **header** que contém informações de cabeçalho como o tip de URL
+6. na linha 72 passamos para o **body** (instancia do body parser) os valores das variaveis **user** e **password**
+7. (CONTINUA)
