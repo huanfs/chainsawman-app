@@ -1,12 +1,26 @@
+header{
+    display:flex;
+    align-items:center;
+    .navigation{
+        display:flex;
+        gap:1em;
+        button{
+            background-color:transparent;
+            font-weight:700;
+            text-transform:uppercase;
+            a{
+                text-decoration-line:none;
+            }
+        }
+    }
+}
+
 @media screen and (min-width:380px){
     header{
         max-height:100px;
-        display:flex;
-        align-items:center;
         justify-content:space-between;
         padding:1em;
         background-color:var(--DesaturedYellow);
-        position:sticky;
         .logo{
             display:flex;
             align-items:center;
@@ -16,22 +30,16 @@
             }
         }
     }
-    nav{
-        display:flex;
+    .navigation{
         align-items:center;
-        gap:1em;
         button{
-            font-weight:700;
-            text-transform:uppercase;
             color:var(--VibrantRed);
             transition:0.2;
             border:1px solid var(--VibrantRed);
-            background-color:transparent;
             padding:0.2em 0.6em;
             transition:0.2s;
             a{
                 color:var(--VibrantRed);
-                text-decoration-line:none;
             }
             a:hover{
                 color:var(--SolidBlack);
@@ -42,6 +50,43 @@
             color:var(--SolidBlack);
             border-color:var(--SolidBlack);
             box-shadow:3px 3px var(--SolidBlack);
+        }
+    }
+}
+
+@media screen and (max-width:379px){
+    header{
+        width:100%;
+        flex-direction:column;
+        gap:0.5em;
+        padding:0.5em 0;
+        background-color:var(--FadeRed);
+        position:sticky;
+        top:0px;
+        .logo{
+            img{
+                width:180px;
+            }
+        }
+        .navigation{
+            button{
+                border:none;
+                outline:0;
+                color:var(--VibrantYellow);
+                border-bottom:2px solid transparent;
+            }
+            button:focus{
+                border-bottom: 2px solid var(--VibrantYellow);
+            }
+        }
+        .navigation button:last-child{
+            padding:0.2em 0.4em;
+            border: 2px solid var(--VibrantYellow);
+            border-radius:5px;
+            color:var(--VibrantYellow);
+            a{
+                color:var(--VibrantYellow);
+            }
         }
     }
 }
