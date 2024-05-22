@@ -82,3 +82,7 @@ por exemplo. ao clicar em entrar, a rota será mudada para (ex:"/main") renderiz
 5. na linha 69 passamos um objeto **header** que contém informações de cabeçalho como o tip de URL
 6. na linha 72 passamos para o **body** (instancia do body parser) os valores das variaveis **user** e **password**
 7. (CONTINUA)
+
+
+
+DENTRO DOS ESTILOS DE MAINAPP EU DEVO SIMPLIFICAR O LAYOUT MOBILE E DESKTOP ARRUMANDO OS ESTILOS COMUNS

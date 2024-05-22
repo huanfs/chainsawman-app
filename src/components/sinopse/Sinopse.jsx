@@ -5,7 +5,7 @@ import "./Sinopse.scss";
 const Sinopse = () => {
     return(
         <article className="sinopse">
-            <h2>SINOPSE</h2>
+            <h2>sinopse</h2>
             <h3>
             Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto 
             randômico. Com mais de 2000 anos, suas raízes podem ser encontradas em uma 

@@ -7,10 +7,6 @@
         animation-duration: 0.5s;
         animation-iteration-count:calc(1);
         .mainAppInformations{
-            // padding:2em;
-            // display:grid;
-            // grid-template-areas: "left right";
-            // grid-template-columns: 40% 60%;
             width:100%;
             height:100%;
             padding:0 2em;
@@ -18,13 +14,6 @@
             display:flex;
             justify-content:space-between;
             .informations{
-                // padding-left:2em;
-                // min-width:400px;
-                // max-height:550px;
-                // grid-area:right;
-                // display:flex;
-                // flex-wrap:wrap;
-                // gap:2em;
                 display: flex;
                 flex-direction: column;
                 height: 79%;
@@ -54,12 +43,51 @@
 
 @media screen and (max-width:379px){
     .mainApp{
-        border:2px solid blue;
         .mainAppInformations{
-            border:2px solid pink;
+            max-width:379px;
             display:flex;
             flex-direction:column;
             align-items:center;
+            background-color:var(--LightGray);
+            .informations{
+                width:100%;
+                display:flex;
+                flex-direction:column;
+                background-color:var(--DesaturedYellow);
+                padding:0 0.5em;
+                h2{
+                    color:var(--VibrantRed);
+                    margin:1em 0;
+                    padding-left:1em;
+                    text-transform:uppercase;
+                }
+                .episodes{
+                    height:150px;
+                    width:379px;
+                    display:flex;
+                    gap:1em;
+                    justify-content:space-around;
+                    overflow:scroll;
+                    .episode{
+                        display:flex;
+                        min-width:200px;
+                        flex-direction:column;
+                        img{
+                            width:200px;
+                            height:150px;
+                        }
+                        span{
+                            text-align:center;
+                            font-weight:700;
+                            color:var(--White);
+                            background-color:var(--FadeBlack);
+                        }
+                    }
+                }
+                .episodes::-webkit-scrollbar{
+                    width:0;
+                }
+            }
         }
     }
 }
