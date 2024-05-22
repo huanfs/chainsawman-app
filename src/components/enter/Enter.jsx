@@ -72,7 +72,6 @@ const Enter = () => {
             password.current.style.border="1px solid var(--SolidBlack)";
             root.current.style.animationName="slide-out-bck-center";
             AutenticarUsuario();//chamada da função autenticar
-            Navigate("/mainApp"); //MUDANDO A ROTA APÓS TODO O PROCESSAMENTO
         }
         else if(user.current.value != localStorage.getItem("userName")){
             userLabel.current.style.display="flex";
@@ -111,6 +110,10 @@ const Enter = () => {
         });
         const resultado = await Autenticar.json();
         console.log(resultado)
+        const timeout = setTimeout((t)=>{
+            Navigate("/mainApp"); //MUDANDO A ROTA APÓS TODO O PROCESSAMENTO
+        },900);
+        timeout();
     }
 
 
