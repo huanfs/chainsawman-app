@@ -1,6 +1,6 @@
 import React from "react";
 
-import thumb from "../../../public/thumb/default_thumb.jpg";
+import thumb from "../../assets/thumb/default_thumb.jpg";
 import "./Seasons.scss";
 
 function Seasons(){

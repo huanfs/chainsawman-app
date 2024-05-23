@@ -1,16 +1,16 @@
 //importation of each episode image cover
-import thumb_01 from "./thumb/01.png";
-import thumb_02 from "./thumb/02.png";
-import thumb_03 from "./thumb/03.png";
-import thumb_04 from "./thumb/04.png";
-import thumb_05 from "./thumb/05.png";
-import thumb_06 from "./thumb/06.png";
-import thumb_07 from "./thumb/07.png";
-import thumb_08 from "./thumb/08.png";
-import thumb_09 from "./thumb/09.png";
-import thumb_10 from "./thumb/10.png";
-import thumb_11 from "./thumb/11.png";
-import thumb_12 from "./thumb/12.png";
+import thumb_01 from "../src/assets/thumb/01.png";
+import thumb_02 from "../src/assets/thumb/02.png";
+import thumb_03 from "../src/assets/thumb/03.png";
+import thumb_04 from "../src/assets/thumb/04.png";
+import thumb_05 from "../src/assets/thumb/05.png";
+import thumb_06 from "../src/assets/thumb/06.png";
+import thumb_07 from "../src/assets/thumb/07.png";
+import thumb_08 from "../src/assets/thumb/08.png";
+import thumb_09 from "../src/assets/thumb/09.png";
+import thumb_10 from "../src/assets/thumb/10.png";
+import thumb_11 from "../src/assets/thumb/11.png";
+import thumb_12 from "../src/assets/thumb/12.png";
 //creation of one array with all covers
 export const allThumbs = [
     thumb_01,

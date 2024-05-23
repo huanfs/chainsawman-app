@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from "react";
 
 import { allThumbs } from "../public/episodesInformations.jsx"; //<-- episode covers
 
-import default_thumb from "../public/thumb/default_thumb.jpg"; //<-- default cover
+import default_thumb from "./assets/thumb/default_thumb.jpg"; //<-- default cover
 
 export const GlobalContext = React.createContext();
 
