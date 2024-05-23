@@ -1,0 +1,31 @@
+.seasons{
+    display:flex;
+    align-items:center;
+    border-radius:10px;
+    margin:0.5em 0;
+    padding:1em;
+    img{
+        border-radius:5px;
+    }
+}
+@media screen and (min-width:380px){
+    .seasons{
+        border:2px solid var(--VibrantYellow);
+        flex-direction:column;
+        gap:1em;
+        img{
+            height:100px;
+        }
+    }
+}
+@media screen and (max-width:379px){
+    .seasons{
+        border:2px solid var(--VibrantRed);
+        height:100px;
+        width:100%;
+        justify-content:space-between;
+        img{
+            height:70px;
+        }
+    }
+}

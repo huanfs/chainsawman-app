@@ -4,6 +4,7 @@ import React from "react";
     import HeaderNavigation from "../headerNavigation/HeaderNavigation.jsx";
     import EpisodeCover from "../episodeCover/EpisodeCover.jsx";
     import Episode from "../episode/Episode.jsx";
+    import Seasons from "../seasons/Seasons.jsx";
     import Sinopse from "../sinopse/Sinopse.jsx";
 /*components*/
 
@@ -40,6 +41,11 @@ const MainApp = () => {
                             })}
                             </section>
                             </>
+                        ) : null
+                    }
+                    {
+                        appSection.appSection == "temporadas" ? (
+                            <Seasons/>
                         ) : null
                     }
                 </section>
