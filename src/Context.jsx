@@ -20,8 +20,6 @@ export const GlobalStorage = ({ children }) => {
 
     const[cover, setCover] = useState(default_thumb);
 
-    const[screenSize, setScreenSize] = useState(null);
-
     useEffect(()=>{
         switch(cover){
             case "episodio 01" : setCover(allThumbs[0]); Break;
@@ -38,9 +36,47 @@ export const GlobalStorage = ({ children }) => {
             case "episodio 12" : setCover(allThumbs[11]); Break;
         }
     },[episode])
+
+
+
+
+    //estou criando aqui a função de aumentar ou diminuir episodios
+    const ChangeEpisode = (event) => {
+        if(event.target.innerText == 'Previous'){
+            switch(episode){
+                case "episodio 12" : setEpisode("episodio 11"), setCover(allThumbs[11]); break;
+                case "episodio 11" : setEpisode("episodio 10"), setCover(allThumbs[10]); break;
+                case "episodio 10" : setEpisode("episodio 09"), setCover(allThumbs[9]); break;
+                case "episodio 09" : setEpisode("episodio 08"), setCover(allThumbs[8]); break;
+                case "episodio 08" : setEpisode("episodio 07"), setCover(allThumbs[7]); break;
+                case "episodio 07" : setEpisode("episodio 06"), setCover(allThumbs[6]); break;
+                case "episodio 06" : setEpisode("episodio 05"), setCover(allThumbs[5]); break;
+                case "episodio 05" : setEpisode("episodio 04"), setCover(allThumbs[4]); break;
+                case "episodio 04" : setEpisode("episodio 03"), setCover(allThumbs[3]); break;
+                case "episodio 03" : setEpisode("episodio 02"), setCover(allThumbs[2]); break;
+                case "episodio 02" : setEpisode("episodio 01"), setCover(allThumbs[1]); break;
+            }
+        }
+        else if(event.target.innerText == 'Next'){
+            switch(episode){
+                case "episodio 01" : setEpisode("episodio 02"), setCover(allThumbs[1]); break;
+                case "episodio 02" : setEpisode("episodio 03"), setCover(allThumbs[2]); break;
+                case "episodio 03" : setEpisode("episodio 04"), setCover(allThumbs[3]); break;
+                case "episodio 04" : setEpisode("episodio 05"), setCover(allThumbs[4]); break;
+                case "episodio 05" : setEpisode("episodio 06"), setCover(allThumbs[5]); break;
+                case "episodio 06" : setEpisode("episodio 07"), setCover(allThumbs[6]); break;
+                case "episodio 07" : setEpisode("episodio 08"), setCover(allThumbs[7]); break;
+                case "episodio 08" : setEpisode("episodio 09"), setCover(allThumbs[8]); break;
+                case "episodio 09" : setEpisode("episodio 10"), setCover(allThumbs[9]); break;
+                case "episodio 10" : setEpisode("episodio 11"), setCover(allThumbs[10]); break;
+                case "episodio 11" : setEpisode("episodio 12"), setCover(allThumbs[11]); break;
+            }
+        }
+    }
+
     return(
         <GlobalContext.Provider value={
-            {enter, setEnter, appSection, setAppSection, episode, setEpisode, screenSize, setScreenSize, cover,setCover, userName, setUserName, userPassword, setUserPassword}
+            {enter, setEnter, appSection, setAppSection, episode, setEpisode, ChangeEpisode, cover,setCover, userName, setUserName, userPassword, setUserPassword}
             }>
             { children }
         </GlobalContext.Provider>

@@ -28,11 +28,6 @@ const EpisodeCover = () => {
         poster.current.addEventListener("mouseout", Focusable);
     },[focus])
 
-//estou criando aqui a função de aumentar ou diminuir episodios
-    function ChangeEpisode(event){
-        console.log(event.target.innerText)
-    }
-
     return(
         <>
             <article className="ep">
@@ -43,9 +38,9 @@ const EpisodeCover = () => {
                 </div>
                 <span style={{color: focus ? "var(--VibrantYellow)" : null}}>{episodeSelection.episode}</span>
                 <div className="controls">
-                    <button type="button" onClick={ChangeEpisode}><FaLongArrowAltLeft/>previous</button>
+                    <button type="button" onClick={episodeSelection.ChangeEpisode}><FaLongArrowAltLeft/>previous</button>
                     |
-                    <button type="button" onClick={ChangeEpisode}>next<FaLongArrowAltRight/></button>
+                    <button type="button" onClick={episodeSelection.ChangeEpisode}>next<FaLongArrowAltRight/></button>
                 </div>
             </article>
         </>
