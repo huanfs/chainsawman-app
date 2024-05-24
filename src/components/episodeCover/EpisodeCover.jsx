@@ -33,7 +33,6 @@ const EpisodeCover = () => {
             <article className="ep">
                 <div className="poster">
                     <img src={episodeSelection.cover} ref={poster}/>
-                    {/* <IoPlayCircle ref={icon_play} style={{display: focus ? "flex" : "none"}}/> */}
                     <IoPlayCircle style={{color:focus ? '#0040FF' : '#000'}}ref={icon_play}/>
                 </div>
                 <span style={{color: focus ? "var(--VibrantYellow)" : null}}>{episodeSelection.episode}</span>

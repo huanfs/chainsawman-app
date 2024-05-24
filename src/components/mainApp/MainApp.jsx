@@ -34,9 +34,9 @@ const MainApp = () => {
                             <>
                             <h2>episódios</h2>
                             <section className="episodes">
-                                {episodesInformations.map((item)=>{
+                                {episodesInformations.map((item, index)=>{
                                 return(
-                                    <Episode item={item}/>
+                                    <Episode item={item} key={index}/>
                                 )
                             })}
                             </section>

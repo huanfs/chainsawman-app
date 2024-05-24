@@ -17,10 +17,10 @@ function App() {
 
   return (
     <GlobalStorage>
-      <BrowserRouter>
-        <Routes basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/chainsawman-app">
+        <Routes>
           <Route path="/" element={<LoginScreen/>}/>
-          <Route path="mainApp" element={<MainApp/>}/>
+          <Route path="/mainApp" element={<MainApp/>}/>
         </Routes>
       </BrowserRouter>
     </GlobalStorage>

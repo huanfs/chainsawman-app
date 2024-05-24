@@ -131,7 +131,7 @@ const Enter = () => {
             <label htmlFor="user" ref={ userLabel }>usuário não encontrado</label>
             <input type="text" placeholder="nome de usuário" ref={ user} />
             <label htmlFor="password" ref={ passwordLabel }>senha incorreta</label>
-            <input type="password" placeholder="sua senha" ref={ password }/>
+            <input type="password" placeholder="sua senha" ref={ password } autoComplete="on"/>
             <p>esqueçeu a sua senha?</p>
             <input type="submit" value="entrar" onClick={ Enter }/>
             <p onClick={()=>{enterOptions.setEnter(!enterOptions.enter)}}>não tem uma conta? Registre-se</p>
