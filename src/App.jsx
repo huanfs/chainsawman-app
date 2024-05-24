@@ -17,7 +17,7 @@ function App() {
 
   return (
     <GlobalStorage>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<LoginScreen/>}/>
           <Route path="mainApp" element={<MainApp/>}/>
