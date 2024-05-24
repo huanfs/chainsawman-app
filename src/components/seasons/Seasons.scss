@@ -8,7 +8,7 @@
         border-radius:5px;
     }
 }
-@media screen and (min-width:380px){
+@media screen and (min-width:420px){
     .seasons{
         border:2px solid var(--VibrantYellow);
         flex-direction:column;
@@ -18,7 +18,7 @@
         }
     }
 }
-@media screen and (max-width:379px){
+@media screen and (max-width:419px){
     .seasons{
         border:2px solid var(--VibrantRed);
         height:100px;

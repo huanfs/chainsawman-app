@@ -16,7 +16,7 @@ header{
     }
 }
 
-@media screen and (min-width:380px){
+@media screen and (min-width:420px){
     header{
         max-height:100px;
         justify-content:space-between;
@@ -55,7 +55,7 @@ header{
     }
 }
 
-@media screen and (max-width:379px){
+@media screen and (max-width:419px){
     header{
         width:100%;
         flex-direction:column;

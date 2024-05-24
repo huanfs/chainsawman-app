@@ -19,7 +19,7 @@ main{
     }
 }
 
-@media screen and (min-width:380px){
+@media screen and (min-width:420px){
         main{
             aside{
                 right:0;
@@ -34,7 +34,7 @@ main{
         }
 }
 
-@media screen and (max-width:379px){
+@media screen and (max-width:419px){
     main{
         width:100vw;
         flex-direction:column;

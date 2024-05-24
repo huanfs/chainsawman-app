@@ -38,7 +38,7 @@ form{
     }
 }
 
-@media screen and (min-width:380px){
+@media screen and (min-width:420px){
     form{
         label{
             margin-bottom:-1em;
@@ -46,7 +46,7 @@ form{
     }
 }
 
-@media screen and (max-width:379px){
+@media screen and (max-width:419px){
     form{
         gap:0.5em;
         padding:1em;
