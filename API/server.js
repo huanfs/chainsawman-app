@@ -14,8 +14,8 @@ server.use(cors({
 
 server.use(bodyParser.json()); //usando o body parser para ler a URL
 
-server.get("/", (req, res)=>{
-    res.send("olá servidor na porta /");
+server.get("*", (req, res)=>{
+    res.sendFile(__dirname + '404.html');
 })
 //rota adicionar finalizada
 server.post("/adicionar", async(req, res)=>{
