@@ -9,8 +9,8 @@ import { CurrentUser } from "./database/model.js";
 const server = express();
 
 server.use(cors({
-    origin: 'https://huanfs.github.io/chainsawman-app',
-})); //usando o cors
+    origin: ['https://huanfs.github.io/chainsawman-app','http://localhost:3000/chainsawman-app'
+]})); //usando o cors
 
 server.use(bodyParser.json()); //usando o body parser para ler a URL
 
