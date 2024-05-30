@@ -57,12 +57,6 @@ const Enter = () => {
     /*caso os valores referentes ao usuario e senha já existam (usuario previamente registrado)
     define os campos de usuario e senha no componente entrar com o usuario e senha previamente registrados */
 
-    /*um console.log para verificar se os valores estão sendo salvos dentro de localStorage*/
-        useEffect(()=>{
-            console.log(localStorage)
-        },[enterOptions.userName, enterOptions.userPassword]);
-    /*um console.log para verificar se os valores estão sendo salvos dentro de localStorage*/
-
 
     function Enter(event){
         if(user.current.value == localStorage.getItem("userName") && password.current.value == localStorage.getItem("userPassword")){
