@@ -101,7 +101,7 @@ const Enter = () => {
             usuario: user.current.value,
             senha: password.current.value,
         }
-        const Autenticar = await fetch("https://huanfs.github.io/chainsawman-app/autenticar",{
+        const Autenticar = await fetch("http://localhost:3000/autenticar",{
             method: 'POST',
             body: JSON.stringify(dados),
             headers:{
