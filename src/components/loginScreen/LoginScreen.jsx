@@ -1,4 +1,4 @@
-import React,{ useContext } from "react";
+import React from "react";
 
 /*components>>>*/
   import Form from "../form/Form.jsx";
@@ -24,8 +24,3 @@ function LoginScreen() {
 
 export default LoginScreen;
 
-//import Form.jsx.
-
-//import GlobalStorage encapsulating MAIN tag.
-
-//inside MAIN render an aside (with an animate background) and Form.jsx.

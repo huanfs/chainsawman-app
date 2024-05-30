@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom"; // IMPORTAÇÃO DO HOOK NAVIGATE
 
@@ -13,12 +13,6 @@ const Enter = () => {
     const Navigate = useNavigate(); //PASSANDO O HOOK PARA DENTRO DE UMA VARIÁVEL
 
     const enterOptions = React.useContext(GlobalContext); //<--consuming context
-
-    /*talvezs eu precise criar uma variável de autenticação, pois o servidor recebe os dados de usuario
-    e senha e faz uma verificação no banco de dados por estes valores, caso os encontre está retornando
-    o objeto de resposta completo, talvez se eu passar a variavel de autenticação como false e torna-la true
-    dependo do resultado da busca e so a partir dela definir se o usuário deverá ter acesso ao aplicativo
-    seja uma boa ideia*/
 
     /*referencias*/
         const user = useRef(null);
@@ -57,7 +51,6 @@ const Enter = () => {
     /*caso os valores referentes ao usuario e senha já existam (usuario previamente registrado)
     define os campos de usuario e senha no componente entrar com o usuario e senha previamente registrados */
 
-
     function Enter(event){
         if(user.current.value == localStorage.getItem("userName") && password.current.value == localStorage.getItem("userPassword")){
             userLabel.current.style.display="none";
@@ -79,17 +72,7 @@ const Enter = () => {
         }
         event.preventDefault();
     }
-
-
-
-
-
-
-
-
-
-
-
+/*função de autenticar o usuário checando se o mesmo existe na tabela do banco de dados*/
     async function AutenticarUsuario(){
         const dados = {
             usuario: user.current.value,
@@ -109,15 +92,7 @@ const Enter = () => {
         },900);
         timeout();
     }
-
-
-
-
-
-
-
-
-
+    /*função de autenticar o usuário checando se o mesmo existe na tabela do banco de dados*/
 
     return(
         <>
@@ -135,29 +110,3 @@ const Enter = () => {
 }
 
 export default Enter;
-
-
-//this component consumes context for access enter state from GlobalContext.
-
-//we have some refs for some HTML tags here like: [
-//  user -> first input tag (to enter with user name);
-//  password -> the second input tag (to enter with user password);
-// userLabel -> the label for user input;
-// passwordLabel -> the label for password input;
-// root -. label for #root div;
-//]
-
-//we use an useEffect to sets userLabel and passwordLabel to display:none;
-
-//we use another useEffect to get in localStorage both user and password and
-//sets refs for user and password with the respectively values from localStorage.
-
-//we have an function called Enter(event), receiving as argument the event, this function:
-//checks the values in user and password refs matches with values userName and userPassword in localStorage
-//if match turn labels userLabel and passwordLabel to display:none and they colors to (--SolidBlack)
-//starts an fade animation;
-//now, if only user does not match with userName value in localStorage sets the user borderColor to (--VibrantRed)
-//and sets userLabel to display:flex and color to (--VibrantRed);
-//finaly, in the last case, if only password value does not matches with userPassword value in localStorage
-//sets password to borderColor:var(--VibrantRed) and passwordLabel to display:flex and (--VibrantRed) color;
-//the last comand is an preventDefault to block reaload.

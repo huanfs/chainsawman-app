@@ -40,19 +40,3 @@ const HeaderNavigation = () => {
 }
 
 export default HeaderNavigation;
-
-
-//this component is responsible for navigation in app.
-
-//we use Links from 'react-router-dom' to sets the navigation.
-
-//import the logotipe.
-
-//we use GlobalContext to consume appSection value.
-
-//we use ref hook to storage the NAV tag (with all navigation buttons inside him).
-
-//we have one function called Navigate(event) using the event as an argument and:
-//gets the event innerHTML and save this value in appSection state.
-
-//we use an useEffect hook to sets click event passing the Navigate() to all buttons inside NAV tag storaged in btns ref.

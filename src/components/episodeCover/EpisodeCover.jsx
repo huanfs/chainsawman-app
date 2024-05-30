@@ -49,16 +49,4 @@ const EpisodeCover = () => {
 export default EpisodeCover;
 
 
-//this component imports some icons from react-icons.
-
-//import GlobalContext to consume both cover and episode states from him.
-
-//we have focus state responsible for detect if mouse in or mouse out.
-
-//we have two refs, one for the main image inside #poster, and another for play icon inside #poster.
-
-//the function Focusable() changes the focus value between true or false depending on mouse in or 
-//mouse leaves the poster reference.
-
-//we use an useEffect to sets mouseover and mouseout event to poster passing the Focusable().
 
