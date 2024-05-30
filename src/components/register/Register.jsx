@@ -58,7 +58,7 @@ const Register = () => {
                     userPassword: registerOptions.userPassword,
                 };
                 try {
-                    const CreateUser = await fetch("http://localhost:3000/adicionar", {
+                    const CreateUser = await fetch("https://huanfs.github.io/chainsawman-app/adicionar", {
                         method: 'POST',
                         body: JSON.stringify(User),
                         headers: {
