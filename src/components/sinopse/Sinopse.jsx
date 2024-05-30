@@ -7,22 +7,21 @@ const Sinopse = () => {
         <article className="sinopse">
             <h2>sinopse</h2>
             <h3>
-            Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto 
-            randômico. Com mais de 2000 anos, suas raízes podem ser encontradas em uma 
-            obra de literatura latina clássica datada de 45 AC. Richard McClintock, um 
-            professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das 
-            mais obscuras palavras em latim, consectetur, oriunda de uma passagem de Lorem 
-            Ipsum, e, procurando por entre citações da palavra na literatura clássica, 
-            descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 
-            do "de Finibus Bonorum et Malorum" (Os Extremos do Bem e do Mal), de Cícero, 
-            escrito em 45 AC. Este livro é um tratado de teoria da ética muito popular na 
-            época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum dolor sit 
-            amet..." vem de uma linha na seção 1.10.32.
-
-            O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido 
-            abaixo para os interessados. Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et 
-            Malorum" de Cicero também foram reproduzidas abaixo em sua forma exata original, 
-            acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.
+            Chainsaw Man se passa em um mundo onde demônios surgem 
+            a partir dos medos humanos. Em geral, essas criaturas são 
+            perigosas e malignas, se tornando cada vez mais poderosas 
+            de acordo com o medo que conseguem causar nos humanos.
+            Apesar disso, as pessoas podem fazer contratos com eles, 
+            podendo assim utilizar os poderes do demônio com quem formam 
+            um pacto. Isso levou ao surgimento de indivíduos que se 
+            especializam em caçar e empregar essas criaturas, chamados 
+            de Devil Hunters, ou Caçadores de Demônios.
+            Os eventos da história ocorrem nesse universo, que além 
+            de contar com demônios, tem base em uma versão alterada do 
+            mundo real. Assim, a trama se passa em 1997, em uma linha do 
+            tempo onde a União Soviética ainda existe, e muitos eventos 
+            que impactaram a história do mundo, como o Holocausto, parecem 
+            não ter acontecido.
             </h3>
         </article>
     )
