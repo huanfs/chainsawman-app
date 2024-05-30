@@ -13,9 +13,15 @@
         border:2px solid var(--VibrantYellow);
         flex-direction:column;
         gap:1em;
+        transition:0.2s;
         img{
             height:100px;
         }
+    }
+    .seasons:hover{
+        cursor:pointer;
+        background-color:var(--PaleDark);
+        border:2px solid var(--Green);
     }
 }
 @media screen and (max-width:419px){
