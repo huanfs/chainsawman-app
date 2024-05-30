@@ -17,7 +17,7 @@ function App() {
 
   return (
     <GlobalStorage>
-      <BrowserRouter basename="/chainsawman-app">
+      <BrowserRouter basename="https://huanfs.github.io/chainsawman-app">
         <Routes>
           <Route path="/" element={<LoginScreen/>}/>
           <Route path="/mainApp" element={<MainApp/>}/>
