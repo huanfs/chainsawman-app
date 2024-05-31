@@ -1,8 +1,8 @@
 {
   "homepage": "https://huanfs.github.io/chainsawman-app",
-  "name": "about-this-project",
+  "name": "chainsawman-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "proxy": "http://localhost:3000",
   "scripts": {
