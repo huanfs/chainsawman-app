@@ -28,10 +28,3 @@ function App() {
 }
 
 export default App;
-
-
-//this app component receive an context encapsulating all other elements
-//also, receive 'react-router-dom' to define routes for diferent elements
-//here we have inportation of two components ( MainApp, LoginScreen )
-//here, if URL path = "/" renders LoginScreen.jsx, else, if URL path = "mainApp"
-//renders MainApp.jsx
