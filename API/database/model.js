@@ -11,3 +11,5 @@ export const CurrentUser = User.define('usuarios',{
     }
 })
 
+CurrentUser.sync()
+

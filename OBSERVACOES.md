@@ -1,0 +1,1 @@
+arrumar todas as folhas de estilo para simplificação

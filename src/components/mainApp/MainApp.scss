@@ -7,17 +7,15 @@
         animation-duration: 0.5s;
         animation-iteration-count:calc(1);
         .mainAppInformations{
-            width:100%;
             height:100%;
-            padding:0 2em;
+            padding:0 4em;
             margin-top:1em;
             display:flex;
-            // justify-content:space-between;
             .informations{
                 display: flex;
                 flex-direction: column;
                 height: 79%;
-                margin-left: 1em;
+                margin-left: 10%;
                 overflow-y:scroll;
                 h2{
                     text-transform:uppercase;
@@ -44,13 +42,20 @@
 @media screen and (max-width:419px){
     .mainApp{
         width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:space-between;
         .mainAppInformations{
             max-width:419px;
             width:410px;
+            height:100%;
+            justify-content:space-between;
             display:flex;
             flex-direction:column;
             align-items:center;
-            background-color:var(--LightGray);
+            background-color:var(--FadeBlack);
             .informations{
                 width:100%;
                 display:flex;
@@ -65,7 +70,6 @@
                 }
                 .episodes{
                     height:150px;
-                    // width:379px;
                     display:flex;
                     gap:1em;
                     justify-content:space-around;
@@ -74,6 +78,9 @@
                         display:flex;
                         min-width:200px;
                         flex-direction:column;
+                        box-shadow:0px 0px 5px var(--PaleDark);
+                        border-radius:5px;
+                        overflow:hidden;
                         img{
                             width:200px;
                             height:150px;

@@ -6,7 +6,7 @@
 |![Static Badge](https://img.shields.io/badge/react-blue) | ![Static Badge](https://img.shields.io/badge/express-yellow)|
 |![Static Badge](https://img.shields.io/badge/html5-orange) | ![Static Badge](https://img.shields.io/badge/sql-purple)|
 |![Static Badge](https://img.shields.io/badge/css3-lightblue) | ![Static Badge](https://img.shields.io/badge/MySQL-pink)|
-| ![Static Badge](https://img.shields.io/badge/javascript-yellow) | ![Static Badge](https://img.shields.io/badge/sequelize-green) |
+| ![Static Badge](https://img.shields.io/badge/javascript-yellow) | ![Static Badge](https://img.shields.io/badge/sequelize-green) | ![Static Badge](https://img.shields.io/badge/sass-purple)
 
 ---
 
@@ -61,6 +61,10 @@
     - a função **Register(event)** checa se o valor de _password.current_ é diferente de _confirmPassword.current_ ou se _user.current.length_ é menor que 6, caso alguma dessas condições seja verdadeira define a variavel **errorWithData** como true.
     - do contrário. salva o nome de usuário e senha de usuário captados nos inputs em userName e userPassword, respectivamente e define _errorWithData_ como false. por fim acessa a variável global **enter** e altera seu valor ao oposto (true ou false) então chama uma função assíncrona **CreateNewUser()** passando as variáveis userName e userPassword dentro do objeto dados para a API.
     - por fim usamos o **useEffect** que vai observar as variáveis userName e userPassword e salvar seus valores dentro do contexto global userName e userPassword.
+
+9. **src/components/videoPlayer/videoPlayer.jsx**
+    - renderiza uma *tag video* que recebe o caminho através do contexto global no estado **videoSource**,
+    renderiza também um botão que altera o estado de **videoSource** para **null* fechando assim **video**
 
 
 

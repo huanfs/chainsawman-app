@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import { CurrentUser } from "./database/model.js";
+import { ShowEpisode } from "./database/model_episode.js";
 
 const server = express();
 
@@ -30,9 +31,7 @@ server.post("/adicionar", async(req, res)=>{
         console.log(err)
     }
 })
-
-
-
+//rota autenticar
 server.post("/autenticar", async(req, res)=>{
     const usuario = req.body.usuario;
     const senha = req.body.senha;
@@ -48,16 +47,37 @@ server.post("/autenticar", async(req, res)=>{
     }
     res.send(resposta)  
 })
-
-
-
+//rota destruir
 server.get("/destruir", async(req, res)=>{
     await CurrentUser.destroy({
         where: {username: 'emiliSouza'}
     })
-}).listen(3000, ()=>{
+})
+//rota reproduzir
+server.post("/reproduzir", async(req, res)=>{
+    const episodio = req.body.titulo;
+    try{
+        const BuscarEpisodio = await ShowEpisode.findOne({
+            where:{titulo: episodio}
+        })
+        const resposta = await BuscarEpisodio;
+        res.send(resposta);
+    }
+    catch(err){
+        console.log("deu erro")
+        res.send("erro no servidor")
+    }
+})
+.listen(3000, ()=>{
     console.log("servidor rodando")
 })
+
+
+
+
+
+
+
 
 
 //aqui está dando tudo certo quando a rota é / adiciona e quando a rota é /destruir deleta

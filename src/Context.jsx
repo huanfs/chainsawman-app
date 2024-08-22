@@ -20,6 +20,8 @@ export const GlobalStorage = ({ children }) => {
 
     const[cover, setCover] = useState(default_thumb);
 
+    const[videoSource, setVideoSource] = useState(null);
+
     useEffect(()=>{
         switch(cover){
             case "episodio 01" : setCover(allThumbs[0]); Break;
@@ -74,9 +76,14 @@ export const GlobalStorage = ({ children }) => {
         }
     }
 
+    /*esse feito fecha o player de video ao mudar entre as seções do app*/
+    useEffect(()=>{
+        setVideoSource(null);
+    },[appSection, episode])
+
     return(
         <GlobalContext.Provider value={
-            {enter, setEnter, appSection, setAppSection, episode, setEpisode, ChangeEpisode, cover,setCover, userName, setUserName, userPassword, setUserPassword}
+            {enter, setEnter, appSection, setAppSection, episode, setEpisode, ChangeEpisode, cover,setCover, userName, setUserName, userPassword, setUserPassword, videoSource, setVideoSource}
             }>
             { children }
         </GlobalContext.Provider>

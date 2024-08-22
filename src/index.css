@@ -109,6 +109,19 @@
     }
 }
 /*animation while opening the main app for first time*/
+
+/*button close animation gradient*/
+@keyframes btnCloseFlip {
+    0% {
+        transform: translateY(0) rotateX(0);
+        transform-origin: 50% 0%;
+    }
+    100% {
+        transform: translateY(-100%) rotateX(-180deg);
+        transform-origin: 50% 100%;
+    }
+  }
+/*button close animation gradient*/
 *{
     margin:0;
     padding:0;
@@ -118,6 +131,7 @@ body{
     min-height:100vh;
     font-family:"Roboto", sans-serif;
     background-color:var(--LightGray);
+    overflow:hidden;
 }
 #root{
     width:100%;
