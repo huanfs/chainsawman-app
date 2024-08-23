@@ -17,3 +17,10 @@
         }
     }
 }
+
+@media screen and (max-width:419px){
+    .sinopse{
+        height: 58%;
+        overflow-y: scroll;
+    }
+}
