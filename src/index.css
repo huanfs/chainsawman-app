@@ -142,3 +142,8 @@ body{
 h1,h2,h3,h4,h5,h6{
     font-family:'Jersey 25';
 }
+@media screen and (max-width:419px){
+    body{
+        overflow-y:scroll;
+    }
+}

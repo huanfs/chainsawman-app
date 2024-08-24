@@ -95,10 +95,11 @@
 @media screen and (max-width:419px){
     .ep{
         max-width:300px;
-        margin:1em 0;
+        max-height:460px;
         border-radius:5px;
-        // overflow:hidden;
         box-shadow:0px 0px 10px var(--LightGray);
+        border:2px solid var(--White);
+        margin:1em 0;
         .poster{
             img{
                 min-height:390px;

@@ -46,19 +46,18 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        justify-content:space-between;
+        background-color:var(--FadeBlack);
         .mainAppInformations{
             max-width:419px;
-            //width:410px;
             width:100%;
             height:100%;
-            justify-content:space-between;
+            // justify-content:space-between;
             display:flex;
             flex-direction:column;
             align-items:center;
-            background-color:var(--FadeBlack);
             .informations{
                 width:100%;
+                height:100%;
                 display:flex;
                 flex-direction:column;
                 background-color:var(--DesaturedYellow);

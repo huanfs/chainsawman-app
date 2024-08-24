@@ -27,11 +27,9 @@
 @media screen and (max-width:419px){
     .seasons{
         border:2px solid var(--VibrantRed);
-        height:100px;
-        width:100%;
         justify-content:space-between;
         img{
-            height:70px;
+            height:80px;
         }
     }
 }
