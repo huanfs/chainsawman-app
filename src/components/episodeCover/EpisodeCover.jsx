@@ -47,7 +47,6 @@ const EpisodeCover = () => {
                 }
         });
         const resultado = await buscar.json();
-        console.log(resultado.episodio);
         episodeSelection.setVideoSource(resultado.episodio);
     }
     //adicionar a função que irá buscar o episodio no banco de dados ao clicar no icone play

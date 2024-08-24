@@ -16,7 +16,10 @@ video{
     animation-name:btnCloseFlip;
     animation-duration:0.5s;
     animation-iteration-count:1;
+    padding:0.2em 0;
     cursor:pointer;
+    background-color:var(--LightGray);
+    border:none;
     svg{
         transform:scale(2,2)
     }

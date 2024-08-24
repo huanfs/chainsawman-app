@@ -86,7 +86,6 @@ const Enter = () => {
             }
         });
         const resultado = await Autenticar.json();
-        console.log(resultado)
         const timeout = setTimeout((t)=>{
             Navigate("/mainApp"); //MUDANDO A ROTA APÓS TODO O PROCESSAMENTO
         },900);
