@@ -130,7 +130,6 @@
 body{
     min-height:100vh;
     font-family:"Roboto", sans-serif;
-    background-color:var(--LightGray);
     overflow:hidden;
 }
 #root{
