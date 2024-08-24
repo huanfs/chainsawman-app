@@ -7,6 +7,6 @@ import{ CurrentUser} from "./database/model.js";
             password: senha
         })
     }catch(err){
-        console.log("não foi possível inserir o novo valor " + err)
+        console.log("não foi possível cadastrar" + err)
     }
 }

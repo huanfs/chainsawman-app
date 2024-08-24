@@ -11,7 +11,7 @@ const server = express();
 
 server.use(cors({
     origin: 'http://localhost:5173'
-})); //usando o cors
+})); //usando o cors (na porta onde roda o front)
 
 server.use(bodyParser.json()); //usando o body parser para ler a URL
 

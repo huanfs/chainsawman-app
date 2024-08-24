@@ -34,16 +34,6 @@ const EpisodeCover = () => {
         poster.current.addEventListener("mouseout", Focusable);
     },[focus])
 
-
-
-
-
-
-
-
-
-
-
     //adicionar a função que irá buscar o episodio no banco de dados ao clicar no icone play
     async function PlayEpisode(){
         const dados = {
@@ -61,15 +51,6 @@ const EpisodeCover = () => {
         episodeSelection.setVideoSource(resultado.episodio);
     }
     //adicionar a função que irá buscar o episodio no banco de dados ao clicar no icone play
-
-    useEffect(()=>{
-        console.log(episodeSelection.videoSource)
-    })
-
-
-
-
-
 
     return(
         <>

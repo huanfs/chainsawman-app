@@ -1,5 +1,3 @@
-//adicionado agora
-
 import Sequelize from "sequelize";
 
 import { User } from "./db.js";
@@ -23,4 +21,4 @@ export const ShowEpisode = User.define('episodios',{
     }
 })
 
-ShowEpisode.sync().then(()=>{console.log("sincronizado ao banco de dados de episódio")})
+ShowEpisode.sync().then(()=>{console.log("listando episódios no banco de dados")})
