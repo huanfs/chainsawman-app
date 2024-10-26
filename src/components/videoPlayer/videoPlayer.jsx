@@ -9,6 +9,7 @@ import "./videoPlayer.scss";
 const VideoPlayer = () =>{
 
     const video = React.useContext(GlobalContext);
+    console.log(video.videoSource)
 
     return(
         <>
@@ -16,7 +17,7 @@ const VideoPlayer = () =>{
                 video.videoSource != null ? (
                 <>
                     <video controls>
-                        <source src={video.videoSource} type="video/mkv"/>
+                        <source src={video.videoSource} type="video/mp4"/>
                     </video>
                     <button className="btnClose" type="button" onClick={()=>{video.setVideoSource(null)}}><RxCross2/>fechar</button>
                 </>
