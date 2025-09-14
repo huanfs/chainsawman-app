@@ -1,8 +1,8 @@
-import { CurrentUser} from "./database/model.js";
+import { CurrentUser} from "./database/user.js";
 
 export async function Destroy(){
     try{
-        const RemoverUsuario = await CurrentUser.destroy({
+        const RemoveUser = await CurrentUser.destroy({
             where: {username: 'EMILIZINHAAA'}
         })
     }catch(err){

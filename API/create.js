@@ -1,8 +1,8 @@
-import{ CurrentUser} from "./database/model.js";
+import{ CurrentUser } from "./database/user.js";
 
  export async function Create(nome, senha){
     try{
-        const NovoValor = await CurrentUser.create({
+        const NewUser = await CurrentUser.create({
             username: nome,
             password: senha
         })

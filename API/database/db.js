@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 
-export const User = new Sequelize('chainsawman','root','shavershian', {
+export const DB = new Sequelize('chainsawman','root','shavershian', {
     host:'localhost',
     dialect: 'mysql',
 });

@@ -4,13 +4,14 @@ import cors from "cors";
 
 import bodyParser from "body-parser";
 
-import { CurrentUser } from "./database/model.js";
-import { ShowEpisode } from "./database/model_episode.js";
+import { CurrentUser } from "./models/user.js";
+import { ShowEpisode } from "./models/episodes.js";
 
 const server = express();
 
 server.use(cors({
-    origin: 'http://localhost:5173'
+    origin: "*",
+    //origin: 'http://localhost:5173'
 })); //usando o cors (na porta onde roda o front)
 
 server.use(bodyParser.json()); //usando o body parser para ler a URL
@@ -64,7 +65,7 @@ server.post("/reproduzir", async(req, res)=>{
         res.send(resposta);
     }
     catch(err){
-        console.log("deu erro")
+        console.log("deu erro: ", err)
         res.send("erro no servidor")
     }
 })

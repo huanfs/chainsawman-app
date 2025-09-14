@@ -1,8 +1,8 @@
 import Sequelize from "sequelize";
 
-import { User } from "./db.js";
+import { DB } from "../database/db.js";
 
-export const ShowEpisode = User.define('episodios',{
+export const ShowEpisode = DB.define('episodios',{
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -21,4 +21,4 @@ export const ShowEpisode = User.define('episodios',{
     }
 })
 
-ShowEpisode.sync().then(()=>{console.log("listando episódios no banco de dados")})
+//ShowEpisode.sync().then(()=>{console.log("listando episódios no banco de dados")})

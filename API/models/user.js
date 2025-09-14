@@ -1,8 +1,8 @@
 import Sequelize from "sequelize";
 
-import { User } from "./db.js";
+import { DB } from "../database/db.js";
 
-export const CurrentUser = User.define('usuarios',{
+export const CurrentUser = DB.define('usuarios',{
     username: {
         type: Sequelize.STRING,
     },
@@ -11,5 +11,5 @@ export const CurrentUser = User.define('usuarios',{
     }
 })
 
-CurrentUser.sync()
+//CurrentUser.sync()
 
