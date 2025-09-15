@@ -16,10 +16,10 @@ const VideoPlayer = () =>{
             {
                 video.videoSource != null ? (
                 <>
+                    <button className="btnClose" type="button" onClick={()=>{video.setVideoSource(null)}}><RxCross2/>fechar</button>
                     <video controls>
                         <source src={video.videoSource} type="video/mp4"/>
                     </video>
-                    <button className="btnClose" type="button" onClick={()=>{video.setVideoSource(null)}}><RxCross2/>fechar</button>
                 </>
                 ) : (
                     <img src="../assets/error.png"/>
