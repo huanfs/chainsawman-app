@@ -88,9 +88,9 @@ const EpisodeCover = () => {
                             </div>
                             <span style={{color: focus ? "var(--VibrantYellow)" : null}}>{episodeSelection.episode}</span>
                             <div className="controls">
-                                <button type="button" onClick={episodeSelection.ChangeEpisode}><FaLongArrowAltLeft/>previous</button>
+                                <button type="button" onClick={episodeSelection.ChangeEpisode}><FaLongArrowAltLeft/>Previous</button>
                                 |
-                                <button type="button" onClick={episodeSelection.ChangeEpisode}>next<FaLongArrowAltRight/></button>
+                                <button type="button" onClick={episodeSelection.ChangeEpisode}>Next<FaLongArrowAltRight/></button>
                             </div>
                         </>
                     )

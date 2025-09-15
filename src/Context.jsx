@@ -23,19 +23,19 @@ export const GlobalStorage = ({ children }) => {
     const[videoSource, setVideoSource] = useState(null);
 
     useEffect(()=>{
-        switch(cover){
-            case "episodio 01" : setCover(allThumbs[0]); Break;
-            case "episodio 02" : setCover(allThumbs[1]); Break;
-            case "episodio 03" : setCover(allThumbs[2]); Break;
-            case "episodio 04" : setCover(allThumbs[3]); Break;
-            case "episodio 05" : setCover(allThumbs[4]); Break;
-            case "episodio 06" : setCover(allThumbs[5]); Break;
-            case "episodio 07" : setCover(allThumbs[6]); Break;
-            case "episodio 08" : setCover(allThumbs[7]); Break;
-            case "episodio 09" : setCover(allThumbs[8]); Break;
-            case "episodio 10" : setCover(allThumbs[9]); Break;
-            case "episodio 11" : setCover(allThumbs[10]); Break;
-            case "episodio 12" : setCover(allThumbs[11]); Break;
+        switch(episode){
+            case "episodio 01" : setCover(allThumbs[0]); break;
+            case "episodio 02" : setCover(allThumbs[1]); break;
+            case "episodio 03" : setCover(allThumbs[2]); break;
+            case "episodio 04" : setCover(allThumbs[3]); break;
+            case "episodio 05" : setCover(allThumbs[4]); break;
+            case "episodio 06" : setCover(allThumbs[5]); break;
+            case "episodio 07" : setCover(allThumbs[6]); break;
+            case "episodio 08" : setCover(allThumbs[7]); break;
+            case "episodio 09" : setCover(allThumbs[8]); break;
+            case "episodio 10" : setCover(allThumbs[9]); break;
+            case "episodio 11" : setCover(allThumbs[10]); break;
+            case "episodio 12" : setCover(allThumbs[11]); break;
         }
     },[episode])
 
@@ -46,32 +46,32 @@ export const GlobalStorage = ({ children }) => {
     const ChangeEpisode = (event) => {
         if(event.target.innerText == 'Previous'){
             switch(episode){
-                case "episodio 12" : setEpisode("episodio 11"), setCover(allThumbs[11]); break;
-                case "episodio 11" : setEpisode("episodio 10"), setCover(allThumbs[10]); break;
-                case "episodio 10" : setEpisode("episodio 09"), setCover(allThumbs[9]); break;
-                case "episodio 09" : setEpisode("episodio 08"), setCover(allThumbs[8]); break;
-                case "episodio 08" : setEpisode("episodio 07"), setCover(allThumbs[7]); break;
-                case "episodio 07" : setEpisode("episodio 06"), setCover(allThumbs[6]); break;
-                case "episodio 06" : setEpisode("episodio 05"), setCover(allThumbs[5]); break;
-                case "episodio 05" : setEpisode("episodio 04"), setCover(allThumbs[4]); break;
-                case "episodio 04" : setEpisode("episodio 03"), setCover(allThumbs[3]); break;
-                case "episodio 03" : setEpisode("episodio 02"), setCover(allThumbs[2]); break;
-                case "episodio 02" : setEpisode("episodio 01"), setCover(allThumbs[1]); break;
+                case "episodio 12" : setEpisode("episodio 11"); break;
+                case "episodio 11" : setEpisode("episodio 10"); break;
+                case "episodio 10" : setEpisode("episodio 09"); break;
+                case "episodio 09" : setEpisode("episodio 08"); break;
+                case "episodio 08" : setEpisode("episodio 07"); break;
+                case "episodio 07" : setEpisode("episodio 06"); break;
+                case "episodio 06" : setEpisode("episodio 05"); break;
+                case "episodio 05" : setEpisode("episodio 04"); break;
+                case "episodio 04" : setEpisode("episodio 03"); break;
+                case "episodio 03" : setEpisode("episodio 02"); break;
+                case "episodio 02" : setEpisode("episodio 01"); break;
             }
         }
         else if(event.target.innerText == 'Next'){
             switch(episode){
-                case "episodio 01" : setEpisode("episodio 02"), setCover(allThumbs[1]); break;
-                case "episodio 02" : setEpisode("episodio 03"), setCover(allThumbs[2]); break;
-                case "episodio 03" : setEpisode("episodio 04"), setCover(allThumbs[3]); break;
-                case "episodio 04" : setEpisode("episodio 05"), setCover(allThumbs[4]); break;
-                case "episodio 05" : setEpisode("episodio 06"), setCover(allThumbs[5]); break;
-                case "episodio 06" : setEpisode("episodio 07"), setCover(allThumbs[6]); break;
-                case "episodio 07" : setEpisode("episodio 08"), setCover(allThumbs[7]); break;
-                case "episodio 08" : setEpisode("episodio 09"), setCover(allThumbs[8]); break;
-                case "episodio 09" : setEpisode("episodio 10"), setCover(allThumbs[9]); break;
-                case "episodio 10" : setEpisode("episodio 11"), setCover(allThumbs[10]); break;
-                case "episodio 11" : setEpisode("episodio 12"), setCover(allThumbs[11]); break;
+                case "episodio 01" : setEpisode("episodio 02"); break;
+                case "episodio 02" : setEpisode("episodio 03"); break;
+                case "episodio 03" : setEpisode("episodio 04"); break;
+                case "episodio 04" : setEpisode("episodio 05"); break;
+                case "episodio 05" : setEpisode("episodio 06"); break;
+                case "episodio 06" : setEpisode("episodio 07"); break;
+                case "episodio 07" : setEpisode("episodio 08"); break;
+                case "episodio 08" : setEpisode("episodio 09"); break;
+                case "episodio 09" : setEpisode("episodio 10"); break;
+                case "episodio 10" : setEpisode("episodio 11"); break;
+                case "episodio 11" : setEpisode("episodio 12"); break;
             }
         }
     }
