@@ -66,7 +66,6 @@ const EpisodeCover = () => {
             // Aqui você pode adicionar um toast ou modal de erro
         }
     }
-    //adicionar a função que irá buscar o episodio no banco de dados ao clicar no icone play
 
     return(
         <>

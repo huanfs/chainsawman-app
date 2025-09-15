@@ -4,8 +4,6 @@ arrumar detalhes de estilo de alguns componentes no front e organizar as rotas d
 
 tudo funciona!
 
-organizar a pasta api, organizando o código
-
 descobrir porque o login só funciona apos registrar e não direto
 
-corrigit o layout do botão de fechar o player
+descobrir porque o player fecha ao navegar pelas secoes

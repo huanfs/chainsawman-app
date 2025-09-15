@@ -9,7 +9,6 @@ import "./videoPlayer.scss";
 const VideoPlayer = () =>{
 
     const video = React.useContext(GlobalContext);
-    console.log(video.videoSource)
 
     return(
         <>
