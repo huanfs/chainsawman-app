@@ -12,6 +12,10 @@
             margin-top:1em;
             display:flex;
             gap:2em;
+            .video{
+                min-width:450px;
+                max-width:450px;
+            }
             .informations{
                 display: flex;
                 flex-direction: column;

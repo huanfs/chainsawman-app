@@ -76,11 +76,6 @@ export const GlobalStorage = ({ children }) => {
         }
     }
 
-    /*esse feito fecha o player de video ao mudar entre as seções do app*/
-    useEffect(()=>{
-        setVideoSource(null);
-    },[appSection, episode])
-
     return(
         <GlobalContext.Provider value={
             {enter, setEnter, appSection, setAppSection, episode, setEpisode, ChangeEpisode, cover,setCover, userName, setUserName, userPassword, setUserPassword, videoSource, setVideoSource}
