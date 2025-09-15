@@ -6,4 +6,6 @@ tudo funciona!
 
 descobrir porque o login só funciona apos registrar e não direto
 
-descobrir porque o player fecha ao navegar pelas secoes
+usar JWT para autenticar corretamente usuário
+
+mudar para serverless functions ou separa a api e deployar no render/outro
