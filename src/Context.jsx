@@ -78,7 +78,23 @@ export const GlobalStorage = ({ children }) => {
 
     return(
         <GlobalContext.Provider value={
-            {enter, setEnter, appSection, setAppSection, episode, setEpisode, ChangeEpisode, cover,setCover, userName, setUserName, userPassword, setUserPassword, videoSource, setVideoSource}
+            {
+                enter, 
+                setEnter, 
+                appSection, 
+                setAppSection, 
+                episode, 
+                setEpisode, 
+                ChangeEpisode, 
+                cover, 
+                setCover, 
+                userName, 
+                setUserName, 
+                userPassword, 
+                setUserPassword, 
+                videoSource, 
+                setVideoSource
+            }
             }>
             { children }
         </GlobalContext.Provider>
