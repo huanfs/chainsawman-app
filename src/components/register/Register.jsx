@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useContext } from "react";
 
-import { GlobalContext } from "../../Context.jsx";
+import { GlobalContext } from "@src/Context.jsx";
 
 import { IsValidCredentials } from "@utils/IsValidCredentials.js";
 
@@ -29,7 +29,6 @@ const Register = () => {
 
     async function HandleRegistration(event){
         event.preventDefault();
-        console.log("registrando")
         const isValid = await IsValidCredentials({userName, userPassword, samePassword});
         if(!isValid){
             setError(true);
