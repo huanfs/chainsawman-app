@@ -12,7 +12,7 @@ import "./Enter.scss";
 
 const Enter = () => {
 
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
     const {
         userName,
@@ -40,7 +40,7 @@ const Enter = () => {
         const authenticated = await Authentication({userName, userPassword});
 
         if(authenticated){
-            navigate("/mainApp");
+            Navigate("/mainApp");
         }
     };
 
