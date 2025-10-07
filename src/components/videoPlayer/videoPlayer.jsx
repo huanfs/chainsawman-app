@@ -1,34 +1,46 @@
-import React,{ useState, useRef, useEffect } from "react";
+import React,{ useContext } from "react";
 
-import { GlobalContext } from "../../Context.jsx";
+import { GlobalContext } from "@src/Context.jsx";
 
 import { RxCross2 } from "react-icons/rx";
+
+import Error from "@assets/error.png";
 
 import "./videoPlayer.scss";
 
 const VideoPlayer = () =>{
 
-    const video = React.useContext(GlobalContext);
-    console.log(video.videoSource)
+    const { 
+        videoSource, 
+        setVideoSource 
+    } = useContext(GlobalContext);
 
     return(
         <>
             {
-                video.videoSource != null ? (
+                videoSource != null ? (
                 <>
-                    <button className="btnClose" type="button" onClick={()=>{video.setVideoSource(null)}}><RxCross2/>fechar</button>
+                    <button 
+                        className="btnClose" 
+                        type="button" 
+                        onClick={()=>{
+                            setVideoSource(null)}
+                            }>
+                                <RxCross2/>
+                                fechar
+                    </button>
                     <video controls>
-                        <source src={video.videoSource} type="video/mp4"/>
+                        <source 
+                        src={videoSource} 
+                        type="video/mp4"/>
                     </video>
                 </>
                 ) : (
-                    <img src="../assets/error.png"/>
+                    <img src={Error}/>
                 )
             }
         </>
     )
 }
-/*
-preciso criar a tag video e estiliza-la com css
-*/
+
 export default VideoPlayer;

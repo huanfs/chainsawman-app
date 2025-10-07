@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 
-/*components*/
-    import HeaderNavigation from "../headerNavigation/HeaderNavigation.jsx";
-    import EpisodeCover from "../episodeCover/EpisodeCover.jsx";
-    import Episode from "../episode/Episode.jsx";
-    import Seasons from "../seasons/Seasons.jsx";
-    import Sinopse from "../sinopse/Sinopse.jsx";
-/*components*/
+import HeaderNavigation from "@components/headerNavigation/HeaderNavigation.jsx";
+import EpisodeCover from "@components/episodeCover/EpisodeCover.jsx";
+import Episode from "@components/episode/Episode.jsx";
+import Seasons from "@components/seasons/Seasons.jsx";
+import Sinopse from "@components/sinopse/Sinopse.jsx";
 
-import { GlobalContext } from "../../Context.jsx"; /*context*/
+import { GlobalContext } from "@src/Context.jsx";
 
 import { episodesInformations } from "../../../public/episodesInformations.jsx";
 
-import "./MainApp.scss"; //<--styles
+import "./MainApp.scss";
 
 const MainApp = () => {
 
-    const appSection = React.useContext(GlobalContext);
+    const { appSection } = useContext(GlobalContext);
 
     return(
         <section className="mainApp">
@@ -25,12 +23,12 @@ const MainApp = () => {
                 <EpisodeCover/>
                 <section className="informations">
                     {
-                        appSection.appSection == "sinopse" ? (
+                        appSection == "sinopse" ? (
                             <Sinopse/>
                         ) : null
                     }
                     {
-                        appSection.appSection == "episodios" ? (
+                        appSection == "episodios" ? (
                             <>
                             <h2>episódios</h2>
                             <section className="episodes">
@@ -44,7 +42,7 @@ const MainApp = () => {
                         ) : null
                     }
                     {
-                        appSection.appSection == "temporadas" ? (
+                        appSection == "temporadas" ? (
                             <Seasons/>
                         ) : null
                     }
