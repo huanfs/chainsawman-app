@@ -6,6 +6,12 @@ import path from "path"
 export default defineConfig({
   plugins: [react()],
   base: "/chainsawman-app",
+  build: {
+    outDir: "dist"
+  },
+  server: {
+    historyApiFallback: true
+  },
   resolve: {
     alias: {
       "@src":path.resolve(__dirname,"./src"),
