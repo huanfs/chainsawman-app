@@ -1,0 +1,28 @@
+
+export async function Registration({userName, userPassword}) {
+    const user = {
+        userName: userName,
+        userPassword: userPassword,
+    };
+    console.log(user);
+        try {
+        const register = await fetch("http://localhost:3000/adicionar", {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if(register.ok){
+            console.log("usuário criado!")
+            return true;
+        }
+        else{
+            console.log("erro ao criar usuário!");
+            return false;
+        }
+    } catch (err) {
+        console.log("Não foi possível criar usuário:", err);
+        return false;
+    }
+};
