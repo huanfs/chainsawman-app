@@ -11,7 +11,8 @@ export default defineConfig({
       "@src":path.resolve(__dirname,"./src"),
       "@components":path.resolve(__dirname,"./src/components"),
       "@utils":path.resolve(__dirname,"./src/utils"),
-      "@services":path.resolve(__dirname,"./src/services")
+      "@services":path.resolve(__dirname,"./src/services"),
+      "@assets":path.resolve(__dirname,"./arc/assets")
     }
   }
 })
