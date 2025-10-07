@@ -11,7 +11,9 @@ export async function Authentication({userName, userPassword}){
                 "Content-Type": "application/json",
             }
         });
-        if(auth.ok) return true;
+        if(auth.ok){
+            return true;
+        }
         else{
             console.log("erro ao autenticar");
             return false;

@@ -5,7 +5,7 @@ export async function IsValidCredentials({
     userLabel, 
     passwordLabel,
 }) {
-    
+
     let isValid = true;
 
     const isUserValid = userName.length >= 6;
@@ -25,9 +25,10 @@ export async function IsValidCredentials({
 
     if (!isPasswordValid) isValid = false;
 
-    if(samePassword == "" || samePassword != userPassword){
-        isValid = false;
-    }
+    if (typeof samePassword !== "undefined") {
+        const isSamePassword = samePassword === userPassword && samePassword !== "";
+        if (!isSamePassword) isValid = false;
+  }
 
     return isValid;
 }

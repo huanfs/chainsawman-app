@@ -12,7 +12,7 @@ import "./Enter.scss";
 
 const Enter = () => {
 
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
     const {
         userName,
@@ -34,10 +34,13 @@ const Enter = () => {
             userLabel, 
             passwordLabel, 
         });
+
         if(!isValid) return;
+
         const authenticated = await Authentication({userName, userPassword});
+
         if(authenticated){
-            Navigate("/mainApp");
+            navigate("/mainApp");
         }
     };
 
@@ -52,7 +55,7 @@ const Enter = () => {
             <input 
                 type="text" 
                 placeholder="nome de usuário"
-                defaultValue={userName}
+                value={userName}
                 onChange={(e)=>setUserName(e.target.value)} 
             />
             <label 
@@ -64,7 +67,7 @@ const Enter = () => {
                 type="password" 
                 placeholder="sua senha" 
                 autoComplete="on"
-                defaultValue={userPassword}
+                value={userPassword}
                 onChange={(e)=>setUserPassword(e.target.value)}
             />
             <p>esqueçeu a sua senha?</p>

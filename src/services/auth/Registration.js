@@ -4,7 +4,6 @@ export async function Registration({userName, userPassword}) {
         userName: userName,
         userPassword: userPassword,
     };
-    console.log(user);
         try {
         const register = await fetch("http://localhost:3000/adicionar", {
             method: 'POST',
