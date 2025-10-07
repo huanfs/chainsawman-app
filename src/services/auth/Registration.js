@@ -14,11 +14,9 @@ export async function Registration({userName, userPassword}) {
             },
         });
         if(register.ok){
-            console.log("usuário criado!")
             return true;
         }
         else{
-            console.log("erro ao criar usuário!");
             return false;
         }
     } catch (err) {

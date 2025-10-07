@@ -36,7 +36,6 @@ const Register = () => {
             return;
         };
         const isRegisted = await Registration({userName, userPassword});
-        console.log(isRegisted)
         if(isRegisted){
             setEnter(false); //direciona ao formulário de login
         }
