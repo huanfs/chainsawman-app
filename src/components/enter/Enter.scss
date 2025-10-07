@@ -4,4 +4,11 @@
         text-decoration-line:underline;
         color:var(--VibrantRed);
     }
+    input[type="submit"]{
+        transition:300ms;
+    }
+    input[type="submit"]:hover{
+        cursor:pointer;
+        box-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 }

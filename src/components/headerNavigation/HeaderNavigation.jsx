@@ -1,21 +1,21 @@
-import React,{ useEffect, useRef } from "react";
+import React,{ useEffect, useRef, useContext } from "react";
 
 import { Link } from "react-router-dom";
 
-import { GlobalContext } from "../../Context.jsx";
+import { GlobalContext } from "@src/Context.jsx";
 
-import Logo from "../../assets/logo.png";
+import Logo from "@assets/logo.png";
 
-import "./HeaderNavigation.scss"; //<--styles
+import "./HeaderNavigation.scss";
 
 const HeaderNavigation = () => {
 
-    const appSection = React.useContext(GlobalContext);
+    const { setAppSection } = useContext(GlobalContext);
 
     const btns = useRef(null);
 
     function Navigate(event){
-        appSection.setAppSection(event.target.innerHTML);
+        setAppSection(event.target.innerHTML);
     }
 
     useEffect(()=>{
@@ -33,7 +33,14 @@ const HeaderNavigation = () => {
                 <button type="button">episodios</button>
                 <button type="button">sinopse</button>
                 <button type="button">temporadas</button>
-                <button type="button"><Link to={"/"} className="exit">sair</Link></button>
+                <button 
+                    type="button">
+                        <Link 
+                        to={"/"} 
+                        className="exit">
+                            sair
+                        </Link>
+                </button>
             </nav>
         </header>
     )

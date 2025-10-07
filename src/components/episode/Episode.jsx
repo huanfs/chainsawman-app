@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { GlobalContext } from "../../Context.jsx";
 
@@ -6,11 +6,14 @@ import "./Episode.scss";
 
 const Episode = ({ item }) => {
 
-    const episode = React.useContext(GlobalContext);
+    const { 
+        setEpisode, 
+        setCover 
+    } = useContext(GlobalContext);
 
     function GetEpisode(event){
-        episode.setEpisode(event.target.nextElementSibling.innerHTML)
-        episode.setCover(event.target.src);
+        setEpisode(event.target.nextElementSibling.innerHTML)
+        setCover(event.target.src);
     }
     return(
         <div className="episode" onClick={GetEpisode}>

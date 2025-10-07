@@ -1,24 +1,20 @@
-import React from "react";
+import React,{ useContext } from "react";
 
-/*components*/
-    import Enter from "../enter/Enter.jsx";
-    import Register from "../register/Register.jsx";
-/*components*/
+import Enter from "../enter/Enter.jsx";
+import Register from "../register/Register.jsx";
 
-/*context*/
-    import { GlobalContext } from "../../Context.jsx";
-/*context*/
+import { GlobalContext } from "../../Context.jsx";
 
-import "./Form.scss"; //<--styles
+import "./Form.scss";
 
 const Form = () => {
 
-    const enterOrRegister = React.useContext(GlobalContext);
+    const { enter } = useContext(GlobalContext);
 
     return(
         <form>
             {
-                enterOrRegister.enter ? (
+                enter ? (
                     <Register/>
                 ) : (
                     <Enter/>

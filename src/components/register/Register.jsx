@@ -1,95 +1,90 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 
-/*context*/
-    import { GlobalContext } from "../../Context.jsx";
-/*context*/
+import { GlobalContext } from "../../Context.jsx";
 
-import "./Register.scss"; //<--styles
+import { IsValidCredentials } from "@utils/IsValidCredentials.js";
+
+import { Registration } from "@services/auth/Registration.js";
+
+import "./Register.scss";
 
 const Register = () => {
 
-    const registerOptions = React.useContext(GlobalContext); 
+    const {
+        userName,
+        setUserName,
+        userPassword,
+        setUserPassword,
+        enter,
+        setEnter
+    } = useContext(GlobalContext); 
+    
+    const[samePassword, setSamePassword] = useState();
 
-    const[errorWithData, setErrorWithData] = useState(false);
-
-    const[userName, setUserName] = useState();
-    const[userPassword, setUserPassword] = useState();
+    const[error, setError] = useState(false);
 
     const user = useRef(null);
     const password = useRef(null);
     const confirmPassword = useRef(null);
 
-    function CheckUserName(event){
-        user.current.value.length < 6 ? (user.current.style.border="1px solid var(--VibrantRed)") : (user.current.style.border="1px solid var(--Green)", setUserName(event.target.value));
-        
-    }
-    function CheckPassword(event){
-       if(password.current.value == confirmPassword.current.value){
-        password.current.style.border="1px solid var(--Green)";
-        confirmPassword.current.style.border="1px solid var(--Green)";
-        setUserPassword(event.target.value)
-       }
-       if(password.current.value != confirmPassword.current.value){
-        password.current.style.border="1px solid var(--VibrantRed)";
-        confirmPassword.current.style.border="1px solid var(--VibrantRed)";
-       }
-    }
-    //mandar essa função Register para dentro de alguma das outras funções anteriores
-    function Register(event){
-        if(password.current.value != confirmPassword.current.value || user.current.value.length < 6){
-            setErrorWithData(true);
-        }
-        
-        else{
-            setUserName(user.current.value);
-            setUserPassword(password.current.value);
-            setErrorWithData(false);
-            registerOptions.setEnter(!registerOptions.enter);
-            /*função de adição*/
-            async function CreateNewUser() {
-                const User = {
-                    userName: registerOptions.userName,
-                    userPassword: registerOptions.userPassword,
-                };
-                try {
-                    const CreateUser = await fetch("http://localhost:3000/adicionar", {
-                        method: 'POST',
-                        body: JSON.stringify(User),
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    });
-                    console.log("Usuário adicionado");
-                } catch (err) {
-                    console.log("Não foi possível enviar os dados ao banco de dados: " + err);
-                }
-            }
-            
-            CreateNewUser();
-        }
+    async function HandleRegistration(event){
         event.preventDefault();
+        console.log("registrando")
+        const isValid = await IsValidCredentials({userName, userPassword, samePassword});
+        if(!isValid){
+            setError(true);
+            return;
+        };
+        const isRegisted = await Registration({userName, userPassword});
+        if(isRegisted){
+            setEnter(false); //direciona ao formulário de login
+        }
+        else{
+            console.log("falha ao registrar");
+        }
     }
-
-    /*definindo a senha e o usuário em local storage*/
-    useEffect(()=>{
-        registerOptions.setUserName(userName)
-        registerOptions.setUserPassword(userPassword);
-    },[userName, userPassword]);
-
 
     return(
         <>
             <h1>registrar</h1>
-            <label htmlFor="createUser">nome de usuário</label>
-            <input type="text" ref={ user } onChange={ CheckUserName }/>
-            <label htmlFor="createPassword">crie sua senha</label>
-            <input type="password" ref={ password }/>
-            <label htmlFor="confirmPassword">confirme sua senha</label>
-            <input type="password" ref={ confirmPassword } onChange={ CheckPassword }/>
-            <p onClick={()=>{registerOptions.setEnter(!registerOptions.enter)}}>já tem uma conta? Entrar</p>
-            <input type="submit" value="registar" onClick={Register}/>
+            <label 
+                htmlFor="createUser">
+                    nome de usuário
+            </label>
+            <input 
+                type="text" 
+                ref={ user }
+                onChange={(event)=>setUserName(event.target.value)}
+            />
+            <label 
+                htmlFor="createPassword">
+                    crie sua senha
+            </label>
+            <input 
+                type="password" 
+                ref={ password }
+                onChange={(event)=>setUserPassword(event.target.value)}
+            />
+            <label 
+                htmlFor="confirmPassword">
+                    confirme sua senha
+            </label>
+            <input 
+                type="password" 
+                ref={ confirmPassword }
+                onChange={(event)=>setSamePassword(event.target.value)}
+            />
+            <p onClick={()=>{
+                setEnter(!enter)}}>
+                    já tem uma conta? Entrar
+            </p>
+            <input 
+                type="submit" 
+                value="registar" 
+                onClick={(event)=>HandleRegistration(event)}
+            />
             {
-                errorWithData && (
+                error && (
                     <ul className="error-hint">
                         <li>seu usuário deve ter entre 6 e 8 caracteres</li>
                         <li>sua senha deve ter entre 8 e 12 caracteres</li>
