@@ -1,9 +1,9 @@
 import React,{ useContext } from "react";
 
-import Enter from "../enter/Enter.jsx";
-import Register from "../register/Register.jsx";
+import Enter from "@components/enter/Enter.jsx";
+import Register from "@components/register/Register.jsx";
 
-import { GlobalContext } from "../../Context.jsx";
+import { GlobalContext } from "@src/Context.jsx";
 
 import "./Form.scss";
 
