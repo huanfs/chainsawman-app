@@ -2,7 +2,7 @@ import React,{ useRef, useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { GlobalContext } from "../../Context.jsx";
+import { GlobalContext } from "@src/Context.jsx";
 
 import { IsValidCredentials } from "@utils/IsValidCredentials.js";
 
