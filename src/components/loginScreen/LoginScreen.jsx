@@ -1,14 +1,10 @@
 import React from "react";
 
-/*components>>>*/
-  import Form from "../form/Form.jsx";
-/*<<<components*/
+import Form from "@components/form/Form.jsx";
 
-/*context*/
-  import { GlobalStorage } from "../../Context.jsx";
-/*context*/
+import { GlobalStorage } from "@src/Context.jsx";
 
-import './LoginScreen.scss'; //<--styles
+import './LoginScreen.scss';
 
 function LoginScreen() {
 
