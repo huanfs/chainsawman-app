@@ -52,6 +52,7 @@ const Enter = () => {
             <input 
                 type="text" 
                 placeholder="nome de usuário"
+                defaultValue={userName}
                 onChange={(e)=>setUserName(e.target.value)} 
             />
             <label 
@@ -63,6 +64,7 @@ const Enter = () => {
                 type="password" 
                 placeholder="sua senha" 
                 autoComplete="on"
+                defaultValue={userPassword}
                 onChange={(e)=>setUserPassword(e.target.value)}
             />
             <p>esqueçeu a sua senha?</p>
