@@ -1,11 +1,12 @@
 
-export async function Registration({userName, userPassword}) {
+export async function Registration({userName, userPassword}){
+     const apiUrl = import.meta.env.VITE_API_URL;
     const user = {
         userName: userName,
         userPassword: userPassword,
     };
         try {
-        const register = await fetch("http://localhost:3000/adicionar", {
+        const register = await fetch(`${apiUrl}/adicionar`, {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {

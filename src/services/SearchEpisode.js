@@ -1,9 +1,10 @@
 export async function SearchEpisode({episode}){
+    const apiUrl = import.meta.env.VITE_API_URL;
         try {
             const dados = {
                 titulo: episode
             }
-            const buscar = await fetch("http://localhost:3000/reproduzir",{
+            const buscar = await fetch(`${apiUrl}/reproduzir`,{
                 method: "POST",
                 body: JSON.stringify(dados),
                 headers:{

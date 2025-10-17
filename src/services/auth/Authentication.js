@@ -1,10 +1,12 @@
 export async function Authentication({userName, userPassword}){
+    const apiUrl = import.meta.env.VITE_API_URL;
+
     const user = {
         usuario:userName,
         senha:userPassword
     }
     try{
-        const auth = await fetch("http://localhost:3000/autenticar",{
+        const auth = await fetch(`${apiUrl}/autenticar`,{
             method:"POST",
             body: JSON.stringify(user),
             headers:{
