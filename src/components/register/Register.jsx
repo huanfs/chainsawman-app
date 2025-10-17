@@ -6,6 +6,8 @@ import { IsValidCredentials } from "@utils/IsValidCredentials.js";
 
 import { Registration } from "@services/auth/Registration.js";
 
+import Loading from "@components/loading/Loading.jsx";
+
 import "./Register.scss";
 
 const Register = () => {
@@ -16,7 +18,9 @@ const Register = () => {
         userPassword,
         setUserPassword,
         enter,
-        setEnter
+        setEnter,
+        isLoading,
+        setIsLoading
     } = useContext(GlobalContext); 
     
     const[samePassword, setSamePassword] = useState();
@@ -29,16 +33,20 @@ const Register = () => {
 
     async function HandleRegistration(event){
         event.preventDefault();
+        setIsLoading(true);
         const isValid = await IsValidCredentials({userName, userPassword, samePassword});
         if(!isValid){
+            setIsLoading(false);
             setError(true);
             return;
         };
         const isRegisted = await Registration({userName, userPassword});
         if(isRegisted){
+            setIsLoading(false);
             setEnter(false); //direciona ao formulário de login
         }
         else{
+            setIsLoading(false);
             console.log("falha ao registrar");
         }
     }
@@ -77,11 +85,17 @@ const Register = () => {
                 setEnter(!enter)}}>
                     já tem uma conta? Entrar
             </p>
-            <input 
-                type="submit" 
-                value="registar" 
-                onClick={(event)=>HandleRegistration(event)}
-            />
+            {
+                isLoading ? ( 
+                <Loading/>
+             ) : (
+                <input 
+                    type="submit" 
+                    value="registar" 
+                    onClick={(event)=>HandleRegistration(event)}
+                />
+             )
+            }
             {
                 error && (
                     <ul className="error-hint">

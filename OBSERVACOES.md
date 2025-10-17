@@ -13,3 +13,5 @@ mudar para serverless functions ou separa a api e deployar no render/outro
 **resolver os aliases, (os componentes não importam por alias)**
 
 **refatyorar episodeCover** movendo sua função para serviços
+
+arrumar o posicionamento do loader dentro de episode cover após clicar no play

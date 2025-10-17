@@ -122,6 +122,17 @@
     }
   }
 /*button close animation gradient*/
+
+/*loading spinner*/
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*loading spinner*/
 *{
     margin:0;
     padding:0;
