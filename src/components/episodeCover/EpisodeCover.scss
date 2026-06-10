@@ -8,13 +8,19 @@
             width:100%;
         }
         svg{
-            width:5em;
-            height:5em;
+            width:20%;
+            height:20%;
             position:relative;
             bottom:50%;
             left:50%;
             transform:translate(-50%,-50%);
             z-index:10;
+            outline:0;
+            transition:100ms;
+            :hover{
+                cursor:pointer;
+                filter: drop-shadow(0px 0px 10px var(--LightGray));
+            }
         }
     }
     span{
@@ -36,7 +42,7 @@
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:1em;
+            gap:0.6em;
             padding:0.2em 0;
             font-weight:700;
             text-transform:capitalize;
@@ -44,10 +50,12 @@
             outline:0;
             color:var(--White);
             background-color:transparent;
-            transition:0.1s;
-        }
-        button:hover{
-            background-color:var(--White);
+            transition:100ms;
+            &:hover{
+                cursor:pointer;
+                transform:scale(1.1, 1.1);
+                color:var(--VibrantYellow);
+            }
         }
     }
 }
@@ -73,17 +81,9 @@
                 height:100%;
                 transition:0.2s;
             }
-            svg{
-                outline:0;
-                transition:300ms;
-            }
-            svg:hover{
-                filter: drop-shadow(0px 0px 10px var(--LightGray));
-            }
         }
         .controls{
             button{
-                outline:0;
                 svg{
                     width:2em;
                     height:2em;
@@ -92,8 +92,7 @@
             button:hover{
                 cursor:pointer;
                 transform:scale(1.2,1.2);
-                opacity:0.5;
-                color:var(--Green);
+                color:var(--VibrantYellow);
             }
         }
     }

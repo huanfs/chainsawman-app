@@ -63,7 +63,7 @@ const EpisodeCover = () => {
                                         <Loading/>
                                     ) : (
                                         <IoPlayCircle 
-                                            style={{color:focus ? '#0040FF' : '#000'}} 
+                                            style={{color:focus ? 'var(--NavyBlue)' : 'var(--SolidBlack)'}} 
                                             onClick={PlayEpisode}
                                             aria-label="Reproduzir episódio"
                                             role="button"
