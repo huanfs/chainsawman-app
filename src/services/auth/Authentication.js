@@ -2,8 +2,8 @@ export async function Authentication({userName, userPassword}){
     const apiUrl = import.meta.env.VITE_API_URL;
 
     const user = {
-        usuario:userName,
-        senha:userPassword
+        userName:userName,
+        userPassword:userPassword
     }
     try{
         const auth = await fetch(`${apiUrl}/autenticar`,{
