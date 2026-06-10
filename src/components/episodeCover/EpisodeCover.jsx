@@ -6,6 +6,8 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 import VideoPlayer from "@components/videoPlayer/videoPlayer.jsx";
 
+import Loading from "@components/loading/Loading.jsx";
+
 import { GlobalContext } from "@src/Context.jsx";
 
 import { SearchEpisode } from "@services/SearchEpisode.js";
@@ -20,6 +22,8 @@ const EpisodeCover = () => {
         setVideoSource,
         cover,
         ChangeEpisode,
+        isLoading,
+        setIsLoading
     } = useContext(GlobalContext);
 
     const[focus, setFocus] = useState(false);
@@ -29,11 +33,15 @@ const EpisodeCover = () => {
     }
 
     async function PlayEpisode(){
-
+        setIsLoading(true);
         const episodeLink = await SearchEpisode({episode});
 
-        if(!episodeLink) return;
+        if(!episodeLink){
+            setIsLoading(false);
+            return
+        }
         else{
+            setIsLoading(false);
             setVideoSource(episodeLink);
         }
     }
@@ -50,15 +58,21 @@ const EpisodeCover = () => {
                                 <img 
                                     src={cover} 
                                 />
-                                <IoPlayCircle 
-                                    style={{color:focus ? '#0040FF' : '#000'}} 
-                                    onClick={PlayEpisode}
-                                    aria-label="Reproduzir episódio"
-                                    role="button"
-                                    tabIndex="0"
-                                    onMouseEnter={(e)=>{Focusable()}}
-                                    onMouseLeave={(e)=>{Focusable()}}
-                                />
+                                {
+                                    isLoading ? (
+                                        <Loading/>
+                                    ) : (
+                                        <IoPlayCircle 
+                                            style={{color:focus ? 'var(--NavyBlue)' : 'var(--SolidBlack)'}} 
+                                            onClick={PlayEpisode}
+                                            aria-label="Reproduzir episódio"
+                                            role="button"
+                                            tabIndex="0"
+                                            onMouseEnter={(e)=>{Focusable()}}
+                                            onMouseLeave={(e)=>{Focusable()}}
+                                        />
+                                    )
+                                }
                             </div>
                             <span style={{color: focus ? "var(--VibrantYellow)" : null}}>{episode}</span>
                             <div className="controls">

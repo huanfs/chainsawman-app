@@ -8,6 +8,8 @@ import { IsValidCredentials } from "@utils/IsValidCredentials.js";
 
 import { Authentication } from "@services/auth/Authentication.js";
 
+import Loading from "@components/loading/Loading.jsx";
+
 import "./Enter.scss";
 
 const Enter = () => {
@@ -20,7 +22,9 @@ const Enter = () => {
         userPassword,
         setUserPassword,
         enter,
-        setEnter
+        setEnter,
+        isLoading,
+        setIsLoading
     } = useContext(GlobalContext);
 
     const userLabel = useRef(null);
@@ -28,6 +32,7 @@ const Enter = () => {
 
     async function HandleAuthentication(event){
         event.preventDefault();
+        setIsLoading(true);
         const isValid = await IsValidCredentials({
             userName, 
             userPassword, 
@@ -35,11 +40,15 @@ const Enter = () => {
             passwordLabel, 
         });
 
-        if(!isValid) return;
+        if(!isValid){
+            setIsLoading(false);
+            return
+        };
 
         const authenticated = await Authentication({userName, userPassword});
 
         if(authenticated){
+            setIsLoading(false);
             Navigate("/mainApp");
         }
     };
@@ -71,11 +80,17 @@ const Enter = () => {
                 onChange={(e)=>setUserPassword(e.target.value)}
             />
             <p>esqueçeu a sua senha?</p>
-            <input 
-                type="submit" 
-                value="entrar" 
-                onClick={ (event)=>{ HandleAuthentication(event) }}
-            />
+            {
+                isLoading ? (
+                    <Loading/>
+                ) : (
+                    <input 
+                        type="submit" 
+                        value="entrar" 
+                        onClick={ (event)=>{ HandleAuthentication(event) }}
+                    />
+                )
+            }
             <p 
             onClick={()=>{
                 setEnter(!enter)

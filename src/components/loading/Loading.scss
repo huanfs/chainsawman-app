@@ -1,0 +1,9 @@
+.loading{
+    color:var(--VibrantRed);
+    filter:drop-shadow(2px 2px 5px var(--VibrantYellow));
+    min-width:30px;
+    min-height:30px;
+    animation-name: spinner;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}

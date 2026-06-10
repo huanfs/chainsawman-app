@@ -11,6 +11,7 @@
     --DesaturedYellow:rgba(230, 230, 7, 0.836);
     --FadeBlack: #000000c5;
     --FadeRed: #ff0000d2;
+    --NavyBlue: #0654c9;
 }
 /*formulary animations*/
     /*up to 380px*/
@@ -122,6 +123,17 @@
     }
   }
 /*button close animation gradient*/
+
+/*loading spinner*/
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*loading spinner*/
 *{
     margin:0;
     padding:0;
