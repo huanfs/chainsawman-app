@@ -20,7 +20,9 @@ const Register = () => {
         enter,
         setEnter,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        message,
+        setMessage
     } = useContext(GlobalContext); 
     
     const[samePassword, setSamePassword] = useState();
@@ -41,19 +43,41 @@ const Register = () => {
             return;
         };
         const isRegisted = await Registration({userName, userPassword});
-        if(isRegisted){
+        if(isRegisted.success){
+            console.log(isRegisted.message);
+            setMessage(isRegisted.message);
             setIsLoading(false);
-            setEnter(false); //direciona ao formulário de login
+            setEnter(false);
         }
         else{
+            console.log(isRegisted.message);
+            setMessage(isRegisted.message);
             setIsLoading(false);
-            console.log("falha ao registrar");
         }
     }
 
     return(
         <>
             <h1>registrar</h1>
+            {
+                message != "" && 
+                <article
+                className="dialog" 
+                >
+                    <h3>{message}</h3>
+                    <div>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setEnter(false);
+                                setMessage("");
+                            }}
+                        >
+                            quero fazer logIn
+                        </button>
+                    </div>
+                </article>
+            }
             <label 
                 htmlFor="createUser">
                     nome de usuário
@@ -110,4 +134,3 @@ const Register = () => {
 }
 
 export default Register;
-

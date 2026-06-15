@@ -27,3 +27,28 @@
         }
     }
 }
+
+.dialog{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    animation-name:enterApp;
+    animation-duration:var(--ShortTime);
+    animation-iteration-count:1;
+    h3{
+        color:var(--FadeRed);
+    }
+    button{
+        outline:0;
+        border:none;
+        background:transparent;
+        font-weight:500;
+        color:var(--NavyBlue);
+        text-decoration:underline;
+        &:hover{
+            cursor:pointer;
+            color:var(--DesaturedYellow);
+            transition:var(--ShortTime);
+        }
+    }
+}
