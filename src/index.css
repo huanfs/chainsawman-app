@@ -4,7 +4,7 @@
     /*Colors*/
     --VibrantRed: #ff0000;
     --VibrantYellow: #ffd900;
-    --Green: #00c210;
+    --Green: #53c25c;
     --SolidBlack: #000000;
     --White: #ffffff;
     --LightGray: #F2F2F2;
@@ -13,6 +13,7 @@
     --FadeBlack: #000000c5;
     --FadeRed: #ff0000d2;
     --NavyBlue: #0654c9;
+    --DesaturedOrange: rgb(231, 197, 105);
 
     --ShortTime: 300ms;
 }
