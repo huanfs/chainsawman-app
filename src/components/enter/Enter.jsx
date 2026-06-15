@@ -1,4 +1,4 @@
-import React,{ useRef, useContext } from "react";
+import React,{ useRef, useContext, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,8 @@ import "./Enter.scss";
 const Enter = () => {
 
     const Navigate = useNavigate();
+
+    const[isLogInFailed, setIsLogInFailed] = useState(false); //controla se o usuario foi autenticado ou não e exibe a mensagem
 
     const {
         userName,
@@ -49,13 +51,21 @@ const Enter = () => {
 
         if(authenticated){
             setIsLoading(false);
+            setIsLogInFailed(false);
             Navigate("/mainApp");
+        }
+        else{
+            setIsLogInFailed(true);
+            setIsLoading(false);
         }
     };
 
     return(
         <>
             <h1>entrar</h1>
+            {
+                isLogInFailed && <h3 style={{color:'var(--FadeRed)', marginRight:'auto'}}>usuário não encontrado!</h3>
+            }
             <label 
                 htmlFor="user" 
                 ref={ userLabel }>
