@@ -1,6 +1,5 @@
 export async function Authentication({userName, userPassword}){
     const apiUrl = import.meta.env.VITE_API_URL;
-
     const user = {
         userName:userName,
         userPassword:userPassword
@@ -13,10 +12,19 @@ export async function Authentication({userName, userPassword}){
                 "Content-Type":"application/json",
             }
         });
-        return auth.ok;
+        const response = await auth.json();
+        return {
+            success: auth.ok,
+            status: auth.status,
+            message: response.message,
+        }
     }
     catch(err){
-        console.log("error:", err);
-        return false;
+        console.log(response.message);
+        return {
+            success: false,
+            status:500,
+            message: "erro no servidor",
+        }
     }
 }
