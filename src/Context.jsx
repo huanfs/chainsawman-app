@@ -24,7 +24,10 @@ export const GlobalStorage = ({ children }) => {
 
     const[isLoading, setIsLoading] = useState(false);
 
-    const[message, setMessage] = useState("");
+    const[message, setMessage] = useState({
+        "status":undefined,
+        "text":"",
+    });
 
     useEffect(()=>{
         switch(episode){
