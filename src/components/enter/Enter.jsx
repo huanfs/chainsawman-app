@@ -16,8 +16,6 @@ const Enter = () => {
 
     const Navigate = useNavigate();
 
-    const[isLogInFailed, setIsLogInFailed] = useState(false); //controla se o usuario foi autenticado ou não e exibe a mensagem
-
     const {
         userName,
         setUserName,
@@ -26,7 +24,9 @@ const Enter = () => {
         enter,
         setEnter,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        message,
+        setMessage
     } = useContext(GlobalContext);
 
     const userLabel = useRef(null);
@@ -47,15 +47,16 @@ const Enter = () => {
             return
         };
 
-        const authenticated = await Authentication({userName, userPassword});
+        const isAuthenticated = await Authentication({userName, userPassword});
 
-        if(authenticated){
+        setMessage(message=>({status: isAuthenticated.status, text: isAuthenticated.message}));
+
+        if(isAuthenticated){
+            console.log(isAuthenticated);
             setIsLoading(false);
-            setIsLogInFailed(false);
             Navigate("/mainApp");
         }
         else{
-            setIsLogInFailed(true);
             setIsLoading(false);
         }
     };
@@ -64,7 +65,7 @@ const Enter = () => {
         <>
             <h1>entrar</h1>
             {
-                isLogInFailed && <h3 style={{color:'var(--FadeRed)', marginRight:'auto'}}>usuário não encontrado!</h3>
+                message != "" && <h3 style={{color:message.status < 399 ? "var(--Green)" : "var(--DesaturedOrange)", marginRight:'auto'}}>{message.text}</h3>
             }
             <label 
                 htmlFor="user" 
