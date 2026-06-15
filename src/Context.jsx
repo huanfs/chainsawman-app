@@ -24,6 +24,8 @@ export const GlobalStorage = ({ children }) => {
 
     const[isLoading, setIsLoading] = useState(false);
 
+    const[message, setMessage] = useState("");
+
     useEffect(()=>{
         switch(episode){
             case "episodio 01" : setCover(allThumbs[0]); break;
@@ -97,7 +99,9 @@ export const GlobalStorage = ({ children }) => {
                 videoSource, 
                 setVideoSource,
                 isLoading,
-                setIsLoading
+                setIsLoading,
+                message,
+                setMessage
             }
             }>
             { children }
