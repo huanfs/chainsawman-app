@@ -20,7 +20,7 @@ export async function Authentication({userName, userPassword}){
         }
     }
     catch(err){
-        console.log("erro inesperado!");
+        console.log("erro:",err);
         return {
             success: false,
             status:500,
