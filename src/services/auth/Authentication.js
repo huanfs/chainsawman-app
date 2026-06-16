@@ -20,11 +20,11 @@ export async function Authentication({userName, userPassword}){
         }
     }
     catch(err){
-        console.log(response.message);
+        console.log("erro inesperado!");
         return {
             success: false,
             status:500,
-            message: "erro no servidor",
+            message: "erro no servidor!",
         }
     }
 }

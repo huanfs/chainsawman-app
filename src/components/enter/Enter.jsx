@@ -51,8 +51,7 @@ const Enter = () => {
 
         setMessage(message=>({status: isAuthenticated.status, text: isAuthenticated.message}));
 
-        if(isAuthenticated){
-            console.log(isAuthenticated);
+        if(isAuthenticated.success){
             setIsLoading(false);
             Navigate("/mainApp");
         }
