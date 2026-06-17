@@ -1,28 +1,28 @@
 export async function SearchEpisode({episode}){
     const apiUrl = import.meta.env.VITE_API_URL;
         try {
-            const dados = {
-                titulo: episode
+            const title = {
+                title: episode
             }
-            const buscar = await fetch(`${apiUrl}/reproduzir`,{
+            const search = await fetch(`${apiUrl}/play`,{
                 method: "POST",
-                body: JSON.stringify(dados),
+                body: JSON.stringify(title),
                 headers:{
                     "Content-Type":"application/json",
                 }
             });
             
-            if (!buscar.ok) {
-                //throw new Error(`Erro na requisição: ${buscar.status}`);
+            if (!search.ok) {
+                //throw new Error(`Erro na requisição: ${search.status}`);
                 return false;
             }
             
-            const resultado = await buscar.json();
+            const response = await search.json();
 
-            return resultado.episodio;
+            return response.episode;
 
             //setVideoSource(resultado.episodio);
-        } catch (error) {
-            console.error("Erro ao reproduzir episódio:", error);
+        } catch (err) {
+            console.error("Erro ao reproduzir episódio:", err);
         }
     }

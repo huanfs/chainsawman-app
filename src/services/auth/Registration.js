@@ -5,7 +5,7 @@ export async function Registration({userName, userPassword}){
         userPassword: userPassword,
     };
         try {
-        const register = await fetch(`${apiUrl}/adicionar`, {
+        const register = await fetch(`${apiUrl}/register`, {
             method:"POST",
             body:JSON.stringify(user),
             headers:{
