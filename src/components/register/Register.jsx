@@ -17,8 +17,8 @@ const Register = () => {
         setUserName,
         userPassword,
         setUserPassword,
-        enter,
-        setEnter,
+        authScreen,
+        setAuthScreen,
         isLoading,
         setIsLoading,
         message,
@@ -43,15 +43,17 @@ const Register = () => {
             return;
         };
         const isRegisted = await Registration({userName, userPassword});
+        setMessage({
+            status: isRegisted.status,
+            text: isRegisted.message
+        });
         if(isRegisted.success){
             console.log(isRegisted.message);
-            setMessage(isRegisted.message);
             setIsLoading(false);
-            setEnter(false);
+            setAuthScreen("login");
         }
         else{
             console.log(isRegisted.message);
-            setMessage(isRegisted.message);
             setIsLoading(false);
         }
     }
@@ -60,16 +62,16 @@ const Register = () => {
         <>
             <h1>registrar</h1>
             {
-                message != "" && 
+                message.text != "" && 
                 <article
                 className="dialog" 
                 >
-                    <h3>{message}</h3>
+                    <h3>{message.text}</h3>
                     <div>
                         <button
                             type="button"
                             onClick={() => {
-                                setEnter(false);
+                                setAuthScreen("login");
                                 setMessage("");
                             }}
                         >
