@@ -14,8 +14,8 @@ export async function Registration({userName, userPassword}){
         });
         const response = await register.json();
         return {
-            success: response.ok,
-            status: response.status,
+            success: register.ok,
+            status: register.status,
             message: response.message,
         }
     } catch (err) {

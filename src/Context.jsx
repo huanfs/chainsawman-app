@@ -12,7 +12,8 @@ export const GlobalStorage = ({ children }) => {
     
     const[userPassword, setUserPassword] = useState("");
 
-    const[enter, setEnter] = useState(false);
+    //const[enter, setEnter] = useState(false);
+    const[authScreen, setAuthScreen] = useState("login");
 
     const[appSection, setAppSection] = useState("episodios");
 
@@ -86,8 +87,8 @@ export const GlobalStorage = ({ children }) => {
     return(
         <GlobalContext.Provider value={
             {
-                enter, 
-                setEnter, 
+                authScreen, 
+                setAuthScreen, 
                 appSection, 
                 setAppSection, 
                 episode, 

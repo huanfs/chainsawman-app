@@ -9,12 +9,12 @@ import "./Form.scss";
 
 const Form = () => {
 
-    const { enter } = useContext(GlobalContext);
+    const { authScreen } = useContext(GlobalContext);
 
     return(
         <form>
             {
-                enter ? (
+                authScreen == "register" ? (
                     <Register/>
                 ) : (
                     <Enter/>

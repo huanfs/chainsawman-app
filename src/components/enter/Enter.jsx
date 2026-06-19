@@ -21,8 +21,8 @@ const Enter = () => {
         setUserName,
         userPassword,
         setUserPassword,
-        enter,
-        setEnter,
+        authScreen,
+        setAuthScreen,
         isLoading,
         setIsLoading,
         message,
@@ -103,7 +103,7 @@ const Enter = () => {
             }
             <p 
             onClick={()=>{
-                setEnter(!enter)
+                setAuthScreen("register")
                 }}>
                     não tem uma conta? Registre-se
             </p>
